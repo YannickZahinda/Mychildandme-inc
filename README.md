@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Orphanage User Website Using ReactJS
+This project is a web application built using React.js for an orphanage. It provides a user-friendly interface for effective interaction with the orphanage.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+-	Browse information: users have the ability to explore the website, accessing general information about the orphanage, staying informed about current events. 
+-	Sign up: Unregistered users can subscribe to receive regular updates regarding children, volunteer opportunities, and events. To complete the registration, personal information is required each time.
+- Login: Registered users can log in using their credentials, allowing them to access additional features and perform personalized actions without re-entering personal information. 
+-	Register as a volunteer: The coordinator supervises and manages these applications and oversees related events to ensure a smooth and well-coordinated volunteer experience.
+-	Request adoption information: Request detailed information about children available for adoption.  
+-	Donate to orphanage and track donation information through VNPay and using block chain for donation management.
 
-## Available Scripts
+## Technologies Used
+- React.js: A popular JavaScript library for building user interfaces.
+- React Router: For handling navigation and routing within the application.
+- REST API: To communicate with the back-end server for data retrieval and updates.
+- Authentication: User authentication is implemented for secure access.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screenshots
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20134%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20135%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20136%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20137%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20138%20-%20Ch%E1%BB%8Dn%20ph%C6%B0%C6%A1ng%20th%E1%BB%A9c%20thanh%20to%C3%A1n%20-%20sandbox.vnpayment.vn.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20139%20-%20Thanh%20to%C3%A1n%20qua%20Ng%C3%A2n%20h%C3%A0ng%20NCB%20-%20sandbox.vnpayment.vn.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20140%20-%20X%C3%A1c%20th%E1%BB%B1c%20OTP%20-%20sandbox.vnpayment.vn.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20141%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20142%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20143%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20144%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20146%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20147%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20148%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20149%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20150%20-%20React%20App%20-%20localhost.png)
+![Screenshot](https://github.com/Nbtrien/orphanage-management-user-reactjs/blob/main/src/assets/images/FireShot%20Capture%20151%20-%20React%20App%20-%20localhost.png)
