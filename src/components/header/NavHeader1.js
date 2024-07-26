@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { CCardImage } from '@coreui/react'
-import ReactImg from '../../assets/brand/logo3.png'
+import ReactImg from '../../assets/brand/mwabana.png'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import useAuth from '../hooks/useAuth'

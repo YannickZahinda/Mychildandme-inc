@@ -35,8 +35,8 @@ const AboutArea = () => {
           <div className="col-lg-7">
             <div className="about-heading">
               <div className="section-heading">
-                <h2 className="section__title">Chúng tôi là ai</h2>
-                <p className="section__meta">Tìm hiểu về trại trẻ mồ côi</p>
+                <h2 className="section__title">Who we are</h2>
+                <p className="section__meta">Learn about the orphanage</p>
                 <p className="section__desc">{contact?.about}</p>
               </div>
             </div>
@@ -47,11 +47,11 @@ const AboutArea = () => {
           <div className="col-lg-5">
             <div>
               <div className="section-heading">
-                <h2 className="section__title">Tầm nhìn</h2>
+                <h2 className="section__title">Vision</h2>
                 <br></br>
                 <p className="section__desc">{contact?.vision}</p>
                 <br></br>
-                <h2 className="section__title">Sứ mệnh</h2>
+                <h2 className="section__title">Mission</h2>
                 <br></br>
                 <p>{contact?.mission}</p>
               </div>

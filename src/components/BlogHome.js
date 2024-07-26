@@ -22,7 +22,7 @@ const BlogHome = () => {
         <div className="row">
           <div className="col-lg-8 mx-auto text-center">
             <div className="section-heading blog-heading">
-              <h2 className="section__title">Tin tức mới nhất</h2>
+              <h2 className="section__title">Latest news</h2>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@ const BlogHome = () => {
             <div className="recent-item">
               <div className="recent__img">
                 <span className="meta__date-date">
-                  {moment(posts[0]?.publication_start_date_time).format('[Ngày] D [Tháng]  YYYY')}
+                  {moment(posts[0]?.publication_start_date_time).format('[Day] D [Month]  YYYY')}
                 </span>
                 <img src={posts[0]?.images[0]} alt="" />
               </div>
@@ -44,7 +44,7 @@ const BlogHome = () => {
                   <NavLink
                     to={'../articles/' + posts[0]?.article_slug + '/' + posts[0]?.article_id}
                   >
-                    <button className="vol-event-btn">Xem chi tiết</button>
+                    <button className="vol-event-btn">View details</button>
                   </NavLink>
                 </div>
               </div>

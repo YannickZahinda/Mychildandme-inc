@@ -36,7 +36,7 @@ const SliderTwo = () => {
                   <div className="row">
                     <div className="col-lg-8 mx-auto">
                       <div className="slider-heading">
-                        <p className="slider__meta">Orphanage</p>
+                        <p className="slider__meta">My Child And Me</p>
                         <h2 className="slider__title">
                           Every child deserves to be loved.
                         </h2>

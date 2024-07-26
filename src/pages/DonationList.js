@@ -83,11 +83,9 @@ const DonationListPage = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="section-heading mixer-heading z-100 text-center pl-5 pr-5">
-              <h1 className="text__white mb-3">Danh sách nhà tài trợ hàng tháng</h1>
+              <h1 className="text__white mb-3">Monthly Donor List</h1>
               <h4 className="text__white">
-                Khoản tiền tài trợ của bạn, dù lớn hay nhỏ, đều quan trọng với chúng tôi trên hành
-                trình mang lại nụ cười và tương lai cho trẻ em mồ côi, bị bỏ rơi và có hoàn cảnh đặc
-                biệt khó khăn.
+                Your donation, big or small, is important to us in our journey to bring smiles and a future to orphaned, abandoned, and especially disadvantaged children.
               </h4>
             </div>
           </div>
@@ -98,7 +96,7 @@ const DonationListPage = () => {
           <div className="form-shared-wrap">
             <div className="text-center">
               <h1 className="h1__form__title">
-                Danh sách tài trợ tháng{' '}
+                Donation List for month{' '}
                 <span>
                   <CFormSelect
                     className="border-0"
@@ -108,7 +106,7 @@ const DonationListPage = () => {
                     {renderMonthOptions()}
                   </CFormSelect>
                 </span>{' '}
-                Năm{' '}
+                Year{' '}
                 <span>
                   <CFormSelect
                     className="border-0"
@@ -126,10 +124,10 @@ const DonationListPage = () => {
                   <CTableHead>
                     <tr>
                       <th>#</th>
-                      <th>Tên nhà tài trợ</th>
-                      <th>Số tiền</th>
-                      <th>Thời gian</th>
-                      <th>Chiến dịch tài trợ</th>
+                      <th>Donor Name</th>
+                      <th>Amount</th>
+                      <th>Time</th>
+                      <th>Donation Campaign</th>
                     </tr>
                   </CTableHead>
                   <CTableBody>

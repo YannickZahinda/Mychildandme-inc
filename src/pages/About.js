@@ -10,7 +10,7 @@ const AboutPage = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="section-heading mixer-heading z-100 text-center pl-5 pr-5">
-              <h1 className="text__white mb-3">Về chúng tôi</h1>
+              <h1 className="text__white mb-3">About Us</h1>
             </div>
           </div>
         </div>

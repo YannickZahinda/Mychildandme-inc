@@ -34,9 +34,9 @@ const ServiceArea = () => {
                 <img src={sectionicon} alt="section-icon" />
               </div>
               <h2 className="section__title">
-                Hãy làm người thay đổi cuộc sống cho trẻ em mồ côi bằng cách quyên góp.
+                Be the one to change the lives of orphaned children by donating
               </h2>
-              <p className="section__meta">Giúp đỡ chúng tôi</p>
+              <p className="section__meta">Help Us</p>
             </div>
           </div>
         </div>
@@ -48,11 +48,12 @@ const ServiceArea = () => {
                   <i className="icon-peace-1"></i>
                 </div>
                 <div className="service-content">
-                  <h4 className="service__title">Đỡ đầu trẻ</h4>
+                  <h4 className="service__title">Sponsoring a Child</h4>
                   <p className="service__desc">
-                    Bất kể bạn ở đâu, bạn đều có thể thay đổi cuộc đời của một đứa trẻ.
+                    No matter where you are, you can change a child's life.
                   </p>
                 </div>
+
               </div>
             </div>
           </div>
@@ -63,9 +64,9 @@ const ServiceArea = () => {
                   <i className="icon-praying"></i>
                 </div>
                 <div className="service-content">
-                  <h4 className="service__title">Đỡ đầu gia đình</h4>
+                  <h4 className="service__title">Support a family</h4>
                   <p className="service__desc">
-                    Tham gia đỡ đầu gia đình, bạn cũng sẽ trở thành một phần trong gia đình của trẻ.
+                    By participating in supporting a family, you will also become a part of the child's family.
                   </p>
                 </div>
               </div>
@@ -78,10 +79,9 @@ const ServiceArea = () => {
                   <i className="icon-peace"></i>
                 </div>
                 <div className="service-content">
-                  <h4 className="service__title">Đỡ đầu chung</h4>
+                  <h4 className="service__title">Collective Sponsorship</h4>
                   <p className="service__desc">
-                    Tham gia đỡ đầu chung bạn cũng đóng góp một phần trong việc chăm sóc và nuôi
-                    dạy. trẻ
+                    By participating in collective sponsorship, you also contribute a part in the care and upbringing of children.
                   </p>
                 </div>
               </div>
@@ -94,9 +94,9 @@ const ServiceArea = () => {
                   <i className="icon-heart"></i>
                 </div>
                 <div className="service-content">
-                  <h4 className="service__title">Tài trợ ngay</h4>
+                  <h4 className="service__title">Sponsor Now</h4>
                   <p className="service__desc">
-                    Khoản tiền tài trợ của bạn, dù lớn hay nhỏ, đều quan trọng với chúng tôi.
+                    Your sponsorship, whether large or small, is important to us.
                   </p>
                 </div>
               </div>
@@ -107,7 +107,7 @@ const ServiceArea = () => {
           <div className="col-lg-12">
             <div className="button-shared">
               <a href="/donation" className="theme-btn">
-                tài trợ ngay
+                Donate Now
               </a>
             </div>
           </div>
