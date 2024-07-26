@@ -15,13 +15,13 @@ const HiwArea = () => {
             <div className="hiw-item">
               <div className="hiw-item-img-box hiw-bg1">
                 <figure>
-                  <img src={hiwimg1} />
+                  <img src={hiwimg1} alt="Family" />
                   <h3 className="hiw-title">
-                    Chúng tôi tạo dựng gia đình từ những trái tim mồ côi.
+                    We create families from orphaned hearts.
                   </h3>
                   <div className="hiw-btn-box">
                     <a href="#" className="theme-btn">
-                      xem thêm
+                      Learn More
                     </a>
                   </div>
                 </figure>
@@ -32,11 +32,11 @@ const HiwArea = () => {
             <div className="hiw-item">
               <div className="hiw-item-img-box hiw-bg2">
                 <figure>
-                  <img src={hiwimg2} alt="" />
-                  <h3 className="hiw-title">Hãy cho trẻ em mồ côi một tương lai đầy hy vọng.</h3>
+                  <img src={hiwimg2} alt="Hope" />
+                  <h3 className="hiw-title">Give orphaned children a future full of hope.</h3>
                   <div className="hiw-btn-box">
                     <a href="#" className="theme-btn">
-                      xem thêm
+                      Learn More
                     </a>
                   </div>
                 </figure>
@@ -47,13 +47,13 @@ const HiwArea = () => {
             <div className="hiw-item">
               <div className="hiw-item-img-box hiw-bg3">
                 <figure>
-                  <img src={hiwimg3} alt="" />
+                  <img src={hiwimg3} alt="Small Home" />
                   <h3 className="hiw-title">
-                    Một mái ấm nhỏ bé có thể thay đổi cả cuộc đời một đứa trẻ.
+                    A small home can change a child's whole life.
                   </h3>
                   <div className="hiw-btn-box">
                     <a href="#" className="theme-btn">
-                      xem thêm
+                      Learn More
                     </a>
                   </div>
                 </figure>

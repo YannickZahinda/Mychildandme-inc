@@ -28,12 +28,12 @@ const MainSlider = () => {
                   <div className="row">
                     <div className="col-md-7">
                       <div className="slider-heading">
-                        <p className="slider__meta">Trại trẻ mồ côi</p>
+                        <p className="slider__meta">Orphanage</p>
                         <h2 className="slider__title">
-                          Mỗi đứa trẻ đều xứng đáng được yêu thương và chăm sóc.
+                          Every child deserves to be loved and cared for.
                         </h2>
                         <a href="#" className="theme-btn">
-                          Xem thêm
+                          Learn More
                         </a>
                       </div>
                     </div>
@@ -49,12 +49,12 @@ const MainSlider = () => {
                   <div className="row">
                     <div className="col-md-7">
                       <div className="slider-heading">
-                        <p className="slider__meta">Trại trẻ mồ côi</p>
+                        <p className="slider__meta">Orphanage</p>
                         <h2 className="slider__title">
-                          Mỗi đứa trẻ đều xứng đáng được yêu thương và chăm sóc.
+                          Every child deserves to be loved and cared for.
                         </h2>
                         <a href="#" className="theme-btn">
-                          Xem thêm
+                          Learn More
                         </a>
                       </div>
                     </div>
@@ -70,12 +70,12 @@ const MainSlider = () => {
                   <div className="row">
                     <div className="col-md-7">
                       <div className="slider-heading">
-                        <p className="slider__meta">Trại trẻ mồ côi</p>
+                        <p className="slider__meta">Orphanage</p>
                         <h2 className="slider__title">
-                          Mỗi đứa trẻ đều xứng đáng được yêu thương và chăm sóc.
+                          Every child deserves to be loved and cared for.
                         </h2>
                         <a href="#" className="theme-btn">
-                          Xem thêm
+                          Learn More
                         </a>
                       </div>
                     </div>

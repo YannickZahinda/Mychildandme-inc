@@ -24,7 +24,7 @@ class EntryArea extends Component {
                 <div className="section-icon">
                   <img src={sectionIcon} alt="section-icon" />
                 </div>
-                <h4 className="entry__title">Nỗi đau của những đứa trẻ mồ côi vì COVID-19</h4>
+                <h4 className="entry__title">The pain of children orphaned by COVID-19</h4>
               </div>
             </div>
             <div className="col-lg-9">
@@ -51,8 +51,7 @@ class EntryArea extends Component {
                   <div className="col-lg-8">
                     <div className="entry-video-text">
                       <h4 className="entry__title">
-                        Chúng tôi chăm sóc, nuôi dưỡng, hỗ trợ trẻ em mồ côi, trẻ em bị bỏ rơi và
-                        trẻ em có hoàn cảnh khó khăn.
+                        We care for, nurture, and support orphaned children, abandoned children, and children in difficult circumstances.
                       </h4>
                       <p className="entry__text">Xem tin tức về những trẻ mồ côi</p>
                     </div>

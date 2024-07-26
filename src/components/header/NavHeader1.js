@@ -77,16 +77,16 @@ const NavHeader1 = () => {
                       {auth?.accessToken ? (
                         <>
                           <li className="action__text">
-                            <a href="/accounts">Tài khoản</a>
+                            <a href="/accounts">Account</a>
                           </li>
                         </>
                       ) : (
                         <>
                           <li className="action__text">
-                            <a href="/login">Đăng nhập</a>
+                            <a href="/login">Login</a>
                           </li>
                           <li className="action__text">
-                            <a href="/register">Đăng ký</a>
+                            <a href="/register">Register</a>
                           </li>
                         </>
                       )}
@@ -140,25 +140,25 @@ const NavHeader1 = () => {
                       <ul>
                         <li className="active">
                           <NavLink className="text-white" to="/home">
-                            Trang chủ
+                            Home
                           </NavLink>
                         </li>
                         <li>
-                          <NavLink className="text-white">Giới thiệu</NavLink>
+                          <NavLink className="text-white">Introduction</NavLink>
                           <ul className="dropdown-menu-item">
                             <li>
-                              <NavLink to="/about">Về chúng tôi</NavLink>
+                              <NavLink to="/about">About Us</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/faqs">Câu hỏi thường gặp</NavLink>
+                              <NavLink to="/faqs">Frequently Asked Questions (FAQs)</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/contact">Liên hệ</NavLink>
+                              <NavLink to="/contact">Contact</NavLink>
                             </li>
                           </ul>
                         </li>
                         <li>
-                          <NavLink className="text-white">Tin tức</NavLink>
+                          <NavLink className="text-white">News</NavLink>
                           <ul className="dropdown-menu-item">
                             {articleCategories.map((cate, index) => (
                               <li>
@@ -177,33 +177,33 @@ const NavHeader1 = () => {
                           </ul>
                         </li>
                         <li>
-                          <NavLink className="text-white">Giúp đỡ</NavLink>
+                          <NavLink className="text-white">Help</NavLink>
                           <ul className="dropdown-menu-item">
                             <li>
-                              <NavLink to="/donation/programs">Chiến dịch tài trợ</NavLink>
+                              <NavLink to="/donation/programs">Funding Campaigns</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/posts/families">Tài trợ gia đình</NavLink>
+                              <NavLink to="/posts/families">Sponsor a Family</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/volunteers/events">Tình nguyện viên</NavLink>
+                              <NavLink to="/volunteers/events">Volonteers</NavLink>
                             </li>
                           </ul>
                         </li>
                         <li>
-                          <NavLink className="text-white">Thông tin</NavLink>
+                          <NavLink className="text-white">Information</NavLink>
                           <ul className="dropdown-menu-item">
                             <li>
-                              <NavLink to="/adoption-info">Đăng ký nhận thông tin trẻ</NavLink>
+                              <NavLink to="/adoption-info">Register for Child information</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/donation/tracking">Tra cứu tài trợ</NavLink>
+                              <NavLink to="/donation/tracking">Track Donations</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/donation/list">Danh sách tài trợ</NavLink>
+                              <NavLink to="/donation/list">Donation List</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/bank-info">Thông tin nhận chuyển khoản</NavLink>
+                              <NavLink to="/bank-info">Bank Transfer Information</NavLink>
                             </li>
                           </ul>
                         </li>
@@ -216,7 +216,7 @@ const NavHeader1 = () => {
             <div className="col-lg-2 col-sm-2 col-3">
               <div className="header-btn ml-auto">
                 <NavLink to="/donation" className="main-btn active">
-                  <span className="text-truncate">Tài trợ ngay</span>
+                  <span className="text-truncate">Donate Now</span>
                 </NavLink>
               </div>
               <div
@@ -242,25 +242,25 @@ const NavHeader1 = () => {
           <div className="side-menu-wrap">
             <ul className="side-menu-ul">
               <li className="sidenav__item">
-                <NavLink to="/home">Trang chủ</NavLink>
+                <NavLink to="/home">Home</NavLink>
               </li>
               <li className="sidenav__item">
-                <NavLink>Giới thiệu</NavLink>
+                <NavLink>Introduction</NavLink>
                 <span className="menu-plus-icon"></span>
                 <ul className="side-sub-menu">
                   <li>
-                    <NavLink to="/about">Về chúng tôi</NavLink>
+                    <NavLink to="/about">About Us</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/faqs">Câu hỏi thường gặp</NavLink>
+                    <NavLink to="/faqs">Frequently Asked Questions (FAQs)</NavLink>
                   </li>
                   <li className="sidenav__item">
-                    <NavLink to="/contact">Liên hệ</NavLink>
+                    <NavLink to="/contact">Contact</NavLink>
                   </li>
                 </ul>
               </li>
               <li className="sidenav__item">
-                <NavLink>Tin tức</NavLink>
+                <NavLink>News</NavLink>
                 <span className="menu-plus-icon"></span>
                 <ul className="side-sub-menu">
                   {articleCategories.map((cate, index) => (
@@ -280,35 +280,35 @@ const NavHeader1 = () => {
                 </ul>
               </li>
               <li className="sidenav__item">
-                <NavLink>Giúp đỡ</NavLink>
+                <NavLink>Help</NavLink>
                 <span className="menu-plus-icon"></span>
                 <ul className="side-sub-menu">
                   <li>
-                    <NavLink to="/donation/programs">Chiến dịch tài trợ</NavLink>
+                    <NavLink to="/donation/programs">Funding Campaigns</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/posts/families">Tài trợ gia đình</NavLink>
+                    <NavLink to="/posts/families">Sponsor a Family</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/volunteers/events">Tình nguyện viên</NavLink>
+                    <NavLink to="/volunteers/events">Volunteers</NavLink>
                   </li>
                 </ul>
               </li>
               <li className="sidenav__item">
-                <NavLink>Thông tin</NavLink>
+                <NavLink>Information</NavLink>
                 <span className="menu-plus-icon"></span>
                 <ul className="side-sub-menu">
                   <li>
-                    <NavLink to="/adoption-info">Đăng ký nhận thông tin trẻ</NavLink>
+                    <NavLink to="/adoption-info">Register for Child Information</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/donation/tracking">Tra cứu tài trợ</NavLink>
+                    <NavLink to="/donation/tracking">Track Donations</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/donation/list">Danh sách tài trợ</NavLink>
+                    <NavLink to="/donation/list">Donations List</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/bank-info">Thông tin nhận chuyển khoản</NavLink>
+                    <NavLink to="/bank-info">Bank Transfer Information</NavLink>
                   </li>
                 </ul>
               </li>

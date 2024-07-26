@@ -79,12 +79,12 @@ const NavHeader = () => {
                   <div className="info-box info-box-1 d-flex align-items-center">
                     <ul className="d-flex align-items-center">
                       <li>
-                        <a to="#">
+                        <a href="#">
                           <i className="fa fa-envelope"></i>needhelp@orphanage.com
                         </a>
                       </li>
                       <li>
-                        <a to="#">
+                        <a href="#">
                           <i className="fa fa-phone-square"></i>012 345 6789
                         </a>
                       </li>
@@ -99,37 +99,37 @@ const NavHeader = () => {
                       {auth?.accessToken ? (
                         <>
                           <li className="action__text">
-                            <a href="/logout">Đăng xuất</a>
+                            <a href="/logout">Log out</a>
                           </li>
                         </>
                       ) : (
                         <>
                           <li className="action__text">
-                            <a href="/login">Đăng nhập</a>
+                            <a href="/login">Log in</a>
                           </li>
                           <li className="action__text">
-                            <a href="/register">Đăng ký</a>
+                            <a href="/register">Register</a>
                           </li>
                         </>
                       )}
 
                       <li>
-                        <a to="#">
+                        <a href="#">
                           <i className="fa fa-twitter"></i>
                         </a>
                       </li>
                       <li>
-                        <a to="#">
+                        <a href="#">
                           <i className="fa fa-facebook"></i>
                         </a>
                       </li>
                       <li>
-                        <a to="#">
+                        <a href="#">
                           <i className="fa fa-pinterest"></i>
                         </a>
                       </li>
                       <li>
-                        <a to="#">
+                        <a href="#">
                           <i className="fa fa-instagram"></i>
                         </a>
                       </li>
@@ -142,10 +142,10 @@ const NavHeader = () => {
         </div>
         <div className={`header-top header-menu-action ${state ? 'header-fixed' : ''}`}>
           <div className="container">
-            <div className="row ostion-top-wrap">
+            <div className="row header-top-wrap">
               <div className="col-lg-5 col-sm-5 site-branding">
                 <div className="logo-action d-flex align-items-center justify-content-between">
-                  <div className="ostion-logo">
+                  <div className="logo">
                     <NavLink to="/">
                       <CCardImage
                         className="sidebar-brand-full"
@@ -156,79 +156,79 @@ const NavHeader = () => {
                   </div>
                   <div className="header-btn ml-auto">
                     <NavLink to="/donation" className="theme-btn active">
-                      <span className="text-truncate">Tài trợ ngay</span>
+                      <span className="text-truncate">Donate Now</span>
                     </NavLink>
                   </div>
                 </div>
               </div>
-              <div className="col-lg-7 col-sm-7 ostion-menu">
-                <div className="ostion-menu-innner">
-                  <div className="ostion-menu-content">
+              <div className="col-lg-7 col-sm-7 menu">
+                <div className="menu-inner">
+                  <div className="menu-content">
                     <div className="navigation-top">
                       <nav className="main-navigation">
                         <ul>
                           <li className="active">
-                            <NavLink to="/home">Trang chủ</NavLink>
+                            <NavLink to="/home">Home</NavLink>
                           </li>
                           <li>
-                            <NavLink>Giới thiệu</NavLink>
+                            <NavLink>About</NavLink>
                             <ul className="dropdown-menu-item">
                               <li>
-                                <NavLink to="/about">Về chúng tôi</NavLink>
+                                <NavLink to="/about">About Us</NavLink>
                               </li>
                               <li>
-                                <NavLink to="/causes-detail">Mô hình hoạt động</NavLink>
+                                <NavLink to="/causes-detail">Activity Model</NavLink>
                               </li>
                               <li>
-                                <NavLink to="/q&a">Câu hỏi thường gặp</NavLink>
+                                <NavLink to="/q&a">Frequently Asked Questions</NavLink>
                               </li>
                               <li>
-                                <NavLink to="/contact">Liên hệ</NavLink>
+                                <NavLink to="/contact">Contact</NavLink>
                               </li>
                             </ul>
                           </li>
                           <li>
-                            <NavLink>Tin tức</NavLink>
+                            <NavLink>News</NavLink>
                             <ul className="dropdown-menu-item">
                               <li>
-                                <NavLink to="/events">Tin tức cập nhật</NavLink>
+                                <NavLink to="/events">Latest News</NavLink>
                               </li>
                               <li>
-                                <NavLink to="/events-detail">events detail</NavLink>
+                                <NavLink to="/events-detail">Event Details</NavLink>
                               </li>
                             </ul>
                           </li>
                           <li>
-                            <NavLink>Giúp đỡ</NavLink>
+                            <NavLink>Help</NavLink>
                             <ul className="dropdown-menu-item">
                               <li>
-                                <NavLink to="/donation/programs">Chiến dịch tài trợ</NavLink>
+                                <NavLink to="/donation/programs">Donation Campaigns</NavLink>
                               </li>
                               <li>
-                                <NavLink to="/posts/families">Tài trợ gia đình</NavLink>
+                                <NavLink to="/posts/families">Support Families</NavLink>
                               </li>
                               <li>
-                                <NavLink to="/donation">Trở thành Tình nguyện viên</NavLink>
+                                <NavLink to="/donation">Become a Volunteer</NavLink>
                               </li>
                             </ul>
                           </li>
                           <li>
-                            <NavLink>Thông tin</NavLink>
+                            <NavLink>Information</NavLink>
                             <ul className="dropdown-menu-item">
                               <li>
-                                <NavLink to="/adoption">Đăng ký nhận thông tin trẻ</NavLink>
+                                <NavLink to="/adoption">Register for Child Information</NavLink>
                               </li>
                               <li>
-                                <NavLink to="/donation/tracking">Tra cứu tài trợ</NavLink>
+                                <NavLink to="/donation/tracking">Track Donations</NavLink>
                               </li>
                               <li>
-                                <NavLink to="/volunteer">Văn bản - tài liệu</NavLink>
+                                <NavLink to="/volunteer">Documents - Resources</NavLink>
                               </li>
                               <li>
-                                <NavLink to="/donation/list">Danh sách tài trợ</NavLink>
+                                <NavLink to="/donation/list">List of Donations</NavLink>
                               </li>
                               <li>
-                                <NavLink to="/sponsor">Thư viện ảnh</NavLink>
+                                <NavLink to="/sponsor">Photo Gallery</NavLink>
                               </li>
                             </ul>
                           </li>
@@ -264,75 +264,75 @@ const NavHeader = () => {
           <div className="side-menu-wrap">
             {/* <div className="">
               <NavLink to="/donate" className="theme-btn">
-                Tài trợ ngay
+                Donate Now
               </NavLink>
             </div> */}
             <ul className="side-menu-ul">
               <li className="sidenav__item">
-                <NavLink to="/home">Trang chủ</NavLink>
+                <NavLink to="/home">Home</NavLink>
               </li>
               <li className="sidenav__item">
-                <NavLink>Giới thiệu</NavLink>
+                <NavLink>About</NavLink>
                 <span className="menu-plus-icon"></span>
                 <ul className="side-sub-menu">
                   <li>
-                    <NavLink to="/about">Về chúng tôi</NavLink>
+                    <NavLink to="/about">About Us</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/causes-detail">Mô hình hoạt động</NavLink>
+                    <NavLink to="/causes-detail">Activity Model</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/donate">Báo cáo tài chính</NavLink>
+                    <NavLink to="/donate">Financial Reports</NavLink>
                   </li>
                 </ul>
               </li>
               <li className="sidenav__item">
-                <NavLink>Tin tức</NavLink>
+                <NavLink>News</NavLink>
                 <span className="menu-plus-icon"></span>
                 <ul className="side-sub-menu">
                   <li>
-                    <NavLink to="/events">events</NavLink>
+                    <NavLink to="/events">News</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/events-detail">events detail</NavLink>
+                    <NavLink to="/events-detail">News Details</NavLink>
                   </li>
                 </ul>
               </li>
               <li className="sidenav__item">
-                <NavLink>Giúp đỡ</NavLink>
+                <NavLink>Help</NavLink>
                 <span className="menu-plus-icon"></span>
                 <ul className="side-sub-menu">
                   <li>
-                    <NavLink to="/news">news</NavLink>
+                    <NavLink to="/news">News</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/single-news">news detail</NavLink>
+                    <NavLink to="/single-news">News Detail</NavLink>
                   </li>
                 </ul>
               </li>
               <li className="sidenav__item">
-                <NavLink>Nhận nuôi</NavLink>
+                <NavLink>Adoption</NavLink>
                 <span className="menu-plus-icon"></span>
                 <ul className="side-sub-menu">
                   <li>
-                    <NavLink to="/adoption">Đăng ký nhận thông tin trẻ</NavLink>
+                    <NavLink to="/adoption">Register for Child Information</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/gallery">gallery</NavLink>
+                    <NavLink to="/gallery">Gallery</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/volunteer">become a volunteer</NavLink>
+                    <NavLink to="/volunteer">Become a Volunteer</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/team">our team</NavLink>
+                    <NavLink to="/team">Our Team</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/sponsor">sponsors</NavLink>
+                    <NavLink to="/sponsor">Sponsors</NavLink>
                   </li>
                 </ul>
               </li>
               <li className="sidenav__item">
-                <NavLink to="/contact">Liên hệ</NavLink>
+                <NavLink to="/contact">Contact</NavLink>
               </li>
             </ul>
             <ul className="side-social">
@@ -359,7 +359,7 @@ const NavHeader = () => {
             </ul>
             {/* <div className="side-btn">
               <NavLink to="/donate" className="theme-btn">
-                Tài trợ ngay
+                Donate Now
               </NavLink>
             </div> */}
           </div>

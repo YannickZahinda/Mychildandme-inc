@@ -36,12 +36,12 @@ const SliderTwo = () => {
                   <div className="row">
                     <div className="col-lg-8 mx-auto">
                       <div className="slider-heading">
-                        <p className="slider__meta">Trại trẻ mồ côi</p>
+                        <p className="slider__meta">Orphanage</p>
                         <h2 className="slider__title">
-                          Mỗi đứa trẻ đều xứng đáng được yêu thương.
+                          Every child deserves to be loved.
                         </h2>
                         <NavLink to="/donation" className="main-btn">
-                          Tài trợ ngay
+                          Donate Now
                         </NavLink>
                       </div>
                     </div>
@@ -60,12 +60,12 @@ const SliderTwo = () => {
                   <div className="row">
                     <div className="col-lg-8 mx-auto">
                       <div className="slider-heading">
-                        <p className="slider__meta">Trại trẻ mồ côi</p>
+                        <p className="slider__meta">Orphanage</p>
                         <h2 className="slider__title">
-                          Mang đến cho trẻ một gia đình đầy ắp tình yêu thương
+                          Bringing a loving family to children
                         </h2>
                         <NavLink to="/donation" className="main-btn">
-                          Tài trợ ngay
+                          Donate Now
                         </NavLink>
                       </div>
                     </div>
@@ -84,12 +84,12 @@ const SliderTwo = () => {
                   <div className="row">
                     <div className="col-lg-8 mx-auto">
                       <div className="slider-heading">
-                        <p className="slider__meta">Trại trẻ mồ côi</p>
+                        <p className="slider__meta">Orphanage</p>
                         <h2 className="slider__title">
-                          Chúng tôi tạo dựng gia đình từ những trái tim mồ côi.
+                          We create families from orphaned hearts.
                         </h2>
                         <NavLink to="/donation" className="main-btn">
-                          Tài trợ ngay
+                          Donate Now
                         </NavLink>
                       </div>
                     </div>
