@@ -47,31 +47,31 @@ const Register = () => {
   const [formValidate, setFormValidate] = useState({
     first_name: {
       invalid: false,
-      errorMessage: 'Vui lòng điền tên',
+      errorMessage: 'Please enter your first name',
     },
     last_name: {
       invalid: false,
-      errorMessage: 'Vui lòng điền họ',
+      errorMessage: 'Please enter your last name',
     },
     date_of_birth: {
       invalid: false,
-      errorMessage: 'Ngày sinh không hợp lệ',
+      errorMessage: 'Invalid date of birth',
     },
     mail_address: {
       invalid: false,
-      errorMessage: 'Địa chỉ email không hợp lệ',
+      errorMessage: 'Invalid email address',
     },
     phone_number: {
       invalid: false,
-      errorMessage: 'Số điện thoại không hợp lệ',
+      errorMessage: 'Invalid phone number',
     },
     password: {
       invalid: false,
-      errorMessage: 'Vui lòng nhập mật khẩu',
+      errorMessage: 'Please enter a password',
     },
     confirm_password: {
       invalid: false,
-      errorMessage: 'Vui lòng nhập mật khẩu',
+      errorMessage: 'Please enter a password',
     },
   })
 
@@ -192,16 +192,16 @@ const Register = () => {
       resetForm()
       setSuccessModalMessage((prevSuccessModal) => ({
         ...prevSuccessModal,
-        modalTile: 'Một liên kết đã được xác minh đã được gửi đến tài khoản email của bạn.',
+        modalTile: 'A verification link has been sent to your email account.',
         modalContent:
-          'Vui lòng nhấp vào liên kết trong email vừa được gửi cho để xác minh tài khoản của bạn và hoàn thành quá trình đăng ký!',
+          'Please click the link in the email just sent to verify your account and complete the registration process!',
       }))
       setSuccessModalVisible(true)
     } catch (error) {
       if (error.status == 409) {
         if (error.error.code == '409') {
           setLoadingModalVisible(false)
-          setErrorMessage('Địa chỉ email này đã được sử dụng')
+          setErrorMessage('This email address has already been used')
           setErrorState(true)
           setFormData({
             ...formData,
@@ -218,17 +218,17 @@ const Register = () => {
           setLoadingModalVisible(false)
           setConfirmModalMessage((prevModalMessage) => ({
             ...prevModalMessage,
-            modalTile: 'Email đã được sử dụng',
+            modalTile: 'Email has been used',
             modalContent:
-              'Email mà bạn đăng ký đã được sử dụng để nhận thông tin trẻ chờ nhận nuôi. Bạn có muốn sử dụng những thông tin đó để tạo tài khoản không.',
+              'The email you registered has been used to receive information about children waiting for adoption. Do you want to use that information to create an account?',
           }))
           setConfirmModalVisible(true)
         } else {
           setLoadingModalVisible(false)
           setErrorModalMessage((prevModalError) => ({
             ...prevModalError,
-            modalTile: 'Lỗi',
-            modalContent: 'Đã có lỗi xảy ra, vui lòng thử lại sau',
+            modalTile: 'Error',
+            modalContent: 'An error occurred, please try again later',
           }))
           setErrorModalVisible(true)
         }
@@ -247,9 +247,9 @@ const Register = () => {
       resetForm()
       setSuccessModalMessage((prevSuccessModal) => ({
         ...prevSuccessModal,
-        modalTile: 'Một liên kết đã được xác minh đã được gửi đến tài khoản email của bạn.',
+        modalTile: 'A verification link has been sent to your email account.',
         modalContent:
-          'Vui lòng nhấp vào liên kết trong email vừa được gửi cho để xác minh tài khoản của bạn và hoàn thành quá trình đăng ký!',
+          'Please click the link in the email just sent to verify your account and complete the registration process!',
       }))
       setLoadingModalVisible(false)
       setSuccessModalVisible(true)
@@ -258,8 +258,8 @@ const Register = () => {
       setLoadingModalVisible(false)
       setErrorModalMessage((prevModalError) => ({
         ...prevModalError,
-        modalTile: 'Lỗi',
-        modalContent: 'Đã có lỗi xảy ra, vui lòng thử lại sau',
+        modalTile: 'Error',
+        modalContent: 'An error occurred, please try again later',
       }))
       setErrorModalVisible(true)
     }
@@ -297,164 +297,162 @@ const Register = () => {
               <CCardGroup>
                 <CCard className="mx-4">
                   <CCardBody className="p-4">
-                    <h1 className="text-center">Đăng ký</h1>
+                    <h1 className="text-center">Register</h1>
                     <CForm className="mt-3">
                       <CRow>
                         <CCol lg={12} className={errorState ? 'd-display' : 'd-none'}>
-                          <div className="d-flex justify-content-center mb-3">
-                            <div className="pl-1 pr-1 bg-danger d-flex text-white align-items-center gap-2">
-                              <FaExclamationTriangle />
-                              <span>{errorMessage}</span>
-                            </div>
-                          </div>
-                        </CCol>
-                        <CCol lg={6}>
-                          <CInputGroup className="mb-3">
-                            <CFormInput
-                              value={formData.first_name}
-                              name="first_name"
-                              type="text"
-                              placeholder="Tên*"
-                              onChange={handleInputChange}
-                              invalid={formValidate.first_name.invalid}
-                              required
-                            />
-                          </CInputGroup>
-                        </CCol>
-                        <CCol lg={6}>
-                          <CInputGroup className="mb-3">
-                            <CFormInput
-                              value={formData.last_name}
-                              name="last_name"
-                              type="text"
-                              placeholder="Họ và tên đệm*"
-                              onChange={handleInputChange}
-                              invalid={formValidate.last_name.invalid}
-                            />
-                          </CInputGroup>
-                        </CCol>
-                        <CCol lg={12}>
-                          <CInputGroup className="mb-3">
-                            <CFormInput
-                              value={formData.date_of_birth}
-                              name="date_of_birth"
-                              type="text"
-                              onFocus={(e) => (e.target.type = 'date')}
-                              onBlur={(e) => (e.target.type = 'text')}
-                              placeholder="Ngày sinh*"
-                              onChange={handleInputChange}
-                              invalid={formValidate.date_of_birth.invalid}
-                            />
-                          </CInputGroup>
-                        </CCol>
-                        <CCol lg={12}>
-                          <CInputGroup className="mb-3">
-                            <CFormInput
-                              value={formData.mail_address}
-                              name="mail_address"
-                              type="email"
-                              placeholder="Địa chỉ email*"
-                              onChange={handleInputChange}
-                              invalid={formValidate.mail_address.invalid}
-                            />
-                          </CInputGroup>
-                        </CCol>
-                        <CCol lg={12}>
-                          <CInputGroup className="mb-3">
-                            <CFormInput
-                              value={formData.phone_number}
-                              name="phone_number"
-                              type="number"
-                              placeholder="Số điện thoại*"
-                              onChange={handleInputChange}
-                              invalid={formValidate.phone_number.invalid}
-                            />
-                          </CInputGroup>
-                        </CCol>
-                        <CCol lg={12}>
-                          <CInputGroup className="mb-3">
-                            <CFormInput
-                              value={formData.password}
-                              name="password"
-                              type="password"
-                              placeholder="Mật khẩu*"
-                              autoComplete="new-password"
-                              onChange={handleInputChange}
-                              invalid={formValidate.password.invalid}
-                            />
-                          </CInputGroup>
-                        </CCol>
-                        <CCol lg={12}>
-                          <CInputGroup className="mb-4">
-                            <CFormInput
-                              value={formData.confirm_password}
-                              name="confirm_password"
-                              type="password"
-                              placeholder="Xác nhận mật khẩu*"
-                              onChange={handleInputChange}
-                              invalid={formValidate.confirm_password.invalid}
-                            />
-                          </CInputGroup>
-                        </CCol>
-                        <CCol lg={12}>
-                          <div className="d-flex mb-4 gap-2 align-items-center">
-                            <CFormCheck
-                              checked={checkState}
-                              onChange={(e) => {
-                                setCheckState(e.target.checked)
-                              }}
-                            />
-                            <CFormLabel>Tôi đồng ý với các điều khoản và điều kiện</CFormLabel>
-                          </div>
-                        </CCol>
-                        <CCol lg={12}>
-                          <div className="d-grid">
-                            <CButton color="success" onClick={handleSubmit} disabled={!formValid}>
-                              Đăng ký
-                            </CButton>
+                          <div className="alert alert-danger">
+                            <FaExclamationTriangle className="me-2" />
+                            {errorMessage}
                           </div>
                         </CCol>
                       </CRow>
+                      <CRow>
+                        <CCol md={6}>
+                          <CFormLabel htmlFor="first_name">First Name*</CFormLabel>
+                          <CFormInput
+                            id="first_name"
+                            name="first_name"
+                            placeholder="Enter your first name"
+                            value={formData.first_name}
+                            onChange={handleInputChange}
+                            invalid={formValidate.first_name.invalid}
+                          />
+                          <CFormFeedback invalid>
+                            {formValidate.first_name.errorMessage}
+                          </CFormFeedback>
+                        </CCol>
+                        <CCol md={6}>
+                          <CFormLabel htmlFor="last_name">Last Name*</CFormLabel>
+                          <CFormInput
+                            id="last_name"
+                            name="last_name"
+                            placeholder="Enter your last name"
+                            value={formData.last_name}
+                            onChange={handleInputChange}
+                            invalid={formValidate.last_name.invalid}
+                          />
+                          <CFormFeedback invalid>
+                            {formValidate.last_name.errorMessage}
+                          </CFormFeedback>
+                        </CCol>
+                      </CRow>
+                      <CRow>
+                        <CCol md={6}>
+                          <CFormLabel htmlFor="date_of_birth">Date of Birth*</CFormLabel>
+                          <CFormInput
+                            id="date_of_birth"
+                            name="date_of_birth"
+                            type="date"
+                            value={formData.date_of_birth}
+                            onChange={handleInputChange}
+                            invalid={formValidate.date_of_birth.invalid}
+                          />
+                          <CFormFeedback invalid>
+                            {formValidate.date_of_birth.errorMessage}
+                          </CFormFeedback>
+                        </CCol>
+                        <CCol md={6}>
+                          <CFormLabel htmlFor="phone_number">Phone Number*</CFormLabel>
+                          <CFormInput
+                            id="phone_number"
+                            name="phone_number"
+                            placeholder="Enter your phone number"
+                            value={formData.phone_number}
+                            onChange={handleInputChange}
+                            invalid={formValidate.phone_number.invalid}
+                          />
+                          <CFormFeedback invalid>
+                            {formValidate.phone_number.errorMessage}
+                          </CFormFeedback>
+                        </CCol>
+                      </CRow>
+                      <CFormLabel htmlFor="mail_address">Email Address*</CFormLabel>
+                      <CFormInput
+                        id="mail_address"
+                        name="mail_address"
+                        type="email"
+                        placeholder="Enter your email address"
+                        value={formData.mail_address}
+                        onChange={handleInputChange}
+                        invalid={formValidate.mail_address.invalid}
+                      />
+                      <CFormFeedback invalid>
+                        {formValidate.mail_address.errorMessage}
+                      </CFormFeedback>
+                      <CFormLabel htmlFor="password">Password*</CFormLabel>
+                      <CInputGroup className="mb-3">
+                        <CInputGroupText>
+                          <CIcon icon={cilLockLocked} />
+                        </CInputGroupText>
+                        <CFormInput
+                          id="password"
+                          name="password"
+                          type="password"
+                          placeholder="Enter your password"
+                          value={formData.password}
+                          onChange={handleInputChange}
+                          invalid={formValidate.password.invalid}
+                        />
+                        <CFormFeedback invalid>
+                          {formValidate.password.errorMessage}
+                        </CFormFeedback>
+                      </CInputGroup>
+                      <CFormLabel htmlFor="confirm_password">Confirm Password*</CFormLabel>
+                      <CInputGroup className="mb-3">
+                        <CInputGroupText>
+                          <CIcon icon={cilLockLocked} />
+                        </CInputGroupText>
+                        <CFormInput
+                          id="confirm_password"
+                          name="confirm_password"
+                          type="password"
+                          placeholder="Confirm your password"
+                          value={formData.confirm_password}
+                          onChange={handleInputChange}
+                          invalid={formValidate.confirm_password.invalid}
+                        />
+                        <CFormFeedback invalid>
+                          {formValidate.confirm_password.errorMessage}
+                        </CFormFeedback>
+                      </CInputGroup>
+                      <CFormCheck
+                        id="terms"
+                        name="terms"
+                        label="I agree with the terms and conditions"
+                        checked={checkState}
+                        onChange={() => setCheckState(!checkState)}
+                      />
+                      <CButton
+                        color="primary"
+                        className="px-4"
+                        onClick={handleSubmit}
+                        disabled={!formValid}
+                      >
+                        Register
+                      </CButton>
                     </CForm>
                   </CCardBody>
                 </CCard>
-                <CCard className="text-white bg-primary" style={{ width: '44%' }}>
-                  <CCardBody className="text-center">
-                    <div className="d-flex flex-column justify-content-between h-100">
-                      <div>
-                        <Link to="/">
-                          <CCardImage
-                            className="sidebar-brand-full"
-                            orientation="bottom"
-                            src={ReactImg}
-                          />
-                        </Link>
-                        <h2>Website trại trẻ mồ côi</h2>
-                        <br></br>
-                        <p>
-                          Chúng tôi chăm sóc, nuôi dưỡng, hỗ trợ trẻ em mồ côi, trẻ em bị bỏ rơi và
-                          trẻ em có hoàn cảnh khó khăn.
-                        </p>
-                        <br></br>
-                        <p>
-                          Truy cập vào website để xem những thông tin cập nhật mới nhất về trại trẻ,
-                          tham gia đồng hành cùng chúng tôi bằng chức năng tài trợ trên website.
-                        </p>
-
-                        <Link to="/">
-                          <CButton color="primary" className="mt-3" active tabIndex={-1}>
-                            Vào website
-                          </CButton>
-                        </Link>
-                      </div>
-                      <div className="d-flex align-items-center gap-2 justify-content-center">
-                        <span>Bạn đã có tài khoản? </span>
-                        <Link className="text-black" to="/login">
-                          Đăng nhập
-                        </Link>
-                        <span>ngay.</span>
-                      </div>
-                    </div>
+                <CCard className="text-center">
+                  <CCardBody className="p-4">
+                    <img
+                      src={ReactImg}
+                      width="300"
+                      height="200"
+                      alt="Logo"
+                      className="mb-4"
+                    />
+                    <h3 className="mb-4">
+                      We care for, nurture, and support orphaned children, abandoned children, and children in difficult circumstances.
+                    </h3>
+                    <h5 className="mb-4">
+                      Access the website to view the latest updates about the orphanage and join us through the sponsorship feature on the website.
+                    </h5>
+                    <Link to="/">Enter the Website</Link>
+                    <p className="mt-3">
+                      Already have an account? <Link to="/login">Log in</Link>
+                    </p>
                   </CCardBody>
                 </CCard>
               </CCardGroup>

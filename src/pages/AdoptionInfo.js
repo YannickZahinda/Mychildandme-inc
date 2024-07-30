@@ -52,7 +52,7 @@ const AdoptionInfoPage = () => {
                 to="../adoption"
                 className="d-flex justify-content-start align-items-center gap-2"
               >
-                Chuyển đến trang đăng ký nhận thông tin trẻ
+               Go to the child information registration page
                 <span>
                   <FaArrowRight />
                 </span>

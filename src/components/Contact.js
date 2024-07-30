@@ -24,13 +24,12 @@ const Contact = () => {
               <div className="section-icon">
                 <img src={sectionicon} alt="section-icon" />
               </div>
-              <h2 className="section__title">Liên hệ với chúng tôi</h2>
-              <p className="section__meta">Để lại lời nhắn</p>
+              <h2 className="section__title">Contact Us</h2>
+              <p className="section__meta">Leave a Message</p>
               <p className="section__desc">
-                Hãy để chúng tôi được lắng nghe và hỗ trợ bạn. Dù bạn có thắc mắc, yêu cầu hay góp ý
-                gì, chúng tôi đều sẵn lòng tiếp nhận và giải đáp. Đội ngũ nhân viên tận tâm của
-                chúng tôi luôn sẵn sàng đồng hành cùng bạn để tạo nên một thế giới tốt đẹp hơn cho
-                trẻ em mồ côi.
+                Let us listen to and support you. Whether you have questions, requests, or feedback,
+                we are always ready to receive and respond. Our dedicated team is always ready to
+                accompany you in creating a better world for orphaned children.
               </p>
               <ul className="section__list">
                 <li>
@@ -65,7 +64,7 @@ const Contact = () => {
                       className="form-control"
                       type="text"
                       name="name"
-                      placeholder="Họ và tên"
+                      placeholder="Full Name"
                     />
                   </div>
 
@@ -74,7 +73,7 @@ const Contact = () => {
                       className="form-control"
                       type="email"
                       name="email"
-                      placeholder="Địa chỉ email"
+                      placeholder="Email Address"
                     />
                   </div>
 
@@ -83,17 +82,17 @@ const Contact = () => {
                       className="form-control"
                       type="number"
                       name="phone"
-                      placeholder="Số điện thoại"
+                      placeholder="Phone Number"
                     />
                   </div>
 
                   <div className="col-lg-12 col-sm-12 form-group">
-                    <textarea className="textarea" name="message" placeholder="Lời nhắn"></textarea>
+                    <textarea className="textarea" name="message" placeholder="Message"></textarea>
                   </div>
 
                   <div className="col-lg-12 col-sm-12">
                     <button className="theme-btn submit__btn" type="submit">
-                      Gửi
+                      Send
                     </button>
                   </div>
                 </div>
@@ -104,19 +103,19 @@ const Contact = () => {
         <div className="row contact-detail-action">
           <div className="col-lg-4">
             <div className="contact-item contact-item1">
-              <h3 className="contact__title">Giới thiệu</h3>
+              <h3 className="contact__title">Introduction</h3>
               <p className="contact__desc">{contact?.name}</p>
             </div>
           </div>
           <div className="col-lg-4">
             <div className="contact-item contact-item2">
-              <h3 className="contact__title">Địa chỉ</h3>
+              <h3 className="contact__title">Address</h3>
               <p className="contact__desc">{contact?.address}</p>
             </div>
           </div>
           <div className="col-lg-4">
             <div className="contact-item contact-item3">
-              <h3 className="contact__title">Liên hệ</h3>
+              <h3 className="contact__title">Contact</h3>
               <p className="contact__desc">
                 {contact?.mail_address} <br />
                 {contact?.phone_number}

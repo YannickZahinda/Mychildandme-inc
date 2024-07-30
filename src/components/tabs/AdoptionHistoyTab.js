@@ -26,18 +26,18 @@ const AdoptionHistoryTab = ({ accountId }) => {
           <div className="col-lg-12">
             <div className=" mt-5">
               <h4 className="event-headline text-bold mt-5 mb-3">
-                Lịch sử đăng ký nhận thông tin trẻ
+                Registration History for Child Information
               </h4>
               <CTable bordered responsive>
                 <CTableHead>
                   <tr>
-                    <th>STT</th>
-                    <th>Ngày đăng ký</th>
-                    <th>Hạn xử lý</th>
-                    <th>Ngày xử lý</th>
-                    <th>Trạng thái đơn đăng ký</th>
-                    <th>Đơn đăng ký</th>
-                    <th>Danh sách trẻ</th>
+                    <th>SN</th>
+                    <th>Registration Date</th>
+                    <th>Processing Deadline</th>
+                    <th>Processing Date</th>
+                    <th>Registration status</th>
+                    <th>Registration Form</th>
+                    <th>Child list</th>
                   </tr>
                 </CTableHead>
                 <CTableBody>
@@ -63,7 +63,7 @@ const AdoptionHistoryTab = ({ accountId }) => {
                                 className="text-nodecorate"
                               >
                                 <CButton className="download-btn w-100">
-                                  <div className="download-btn-2-content">Tải xuống</div>
+                                  <div className="download-btn-2-content">Download</div>
                                   <CIcon size="sm" icon={cilDataTransferDown} />
                                 </CButton>
                               </CLink>
@@ -80,7 +80,7 @@ const AdoptionHistoryTab = ({ accountId }) => {
                                 className="text-nodecorate"
                               >
                                 <CButton className="download-btn w-100">
-                                  <div className="download-btn-2-content">Tải xuống</div>
+                                  <div className="download-btn-2-content">Download</div>
                                   <CIcon size="sm" icon={cilDataTransferDown} />
                                 </CButton>
                               </CLink>

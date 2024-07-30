@@ -13,7 +13,7 @@ const LoadingModal = ({ isVisible, setVisible }) => {
       <CModalBody>
         <div className="d-flex flex-column justify-content-center align-items-center">
           <CSpinner color="light" className="spinner-xl" />
-          <h4 className="text-white">Đang tải ...</h4>
+          <h4 className="text-white">Loading ...</h4>
         </div>
       </CModalBody>
     </CModal>

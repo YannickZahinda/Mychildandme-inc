@@ -45,7 +45,7 @@ const AccountPage = () => {
               <div className="account-content">
                 <div className="account__title">
                   <h1 className="text-white mb-1">{account?.full_name}</h1>
-                  <h6 className="text-white">Chào mừng đến với tài khoản của bạn</h6>
+                  <h6 className="text-white">Welcome to your account</h6>
                 </div>
                 <nav className="navbar navbar-default account-navbar">
                   <div className="container-fluid">
@@ -56,7 +56,7 @@ const AccountPage = () => {
                           activeState !== 1 && setActiveState(1)
                         }}
                       >
-                        <span>Tài khoản của bạn</span>
+                        <span>Your account</span>
                       </li>
                       <li
                         className={activeState === 2 ? 'active' : ''}
@@ -64,7 +64,7 @@ const AccountPage = () => {
                           activeState !== 2 && setActiveState(2)
                         }}
                       >
-                        <span>Lịch sử tình nguyện</span>
+                        <span>Your account</span>
                       </li>
                       <li
                         className={activeState === 3 ? 'active' : ''}
@@ -72,14 +72,14 @@ const AccountPage = () => {
                           activeState !== 3 && setActiveState(3)
                         }}
                       >
-                        <span>Lịch sử đăng ký nhận nuôi</span>
+                        <span>Adoption registration history</span>
                       </li>
                       <li className="account-btn-more">
                         <NavLink
                           className="text-white d-flex gap-2"
                           onClick={() => setViewMoreState(!viewMoreState)}
                         >
-                          <div className="account-btn-more-text">Xem thêm</div>
+                          <div className="account-btn-more-text">View more</div>
                           <div>
                             <FaCaretDown size={22} />
                           </div>
@@ -92,7 +92,7 @@ const AccountPage = () => {
                                 activeState !== 1 && setActiveState(1)
                               }}
                             >
-                              <span>Tài khoản của bạn</span>
+                              <span> Register appointment</span>
                             </li>
                             <li
                               className={activeState === 2 ? 'active' : ''}
@@ -100,7 +100,7 @@ const AccountPage = () => {
                                 activeState !== 2 && setActiveState(2)
                               }}
                             >
-                              <span>Lịch sử tình nguyện</span>
+                              <span> Volunteer history</span>
                             </li>
                             <li
                               className={activeState === 3 ? 'active' : ''}
@@ -108,7 +108,7 @@ const AccountPage = () => {
                                 activeState !== 3 && setActiveState(3)
                               }}
                             >
-                              <span>Lịch sử đăng ký nhận nuôi</span>
+                              <span>Adoption registration historyi</span>
                             </li>
                             <li
                               className={activeState === 4 ? 'active' : ''}
@@ -117,7 +117,7 @@ const AccountPage = () => {
                                 activeState !== 4 && setActiveState(4)
                               }}
                             >
-                              <span>Đăng ký lịch hẹn</span>
+                              <span>Register appointment</span>
                             </li>
                           </ul>
                         )}
@@ -129,7 +129,7 @@ const AccountPage = () => {
                           activeState !== 4 && setActiveState(4)
                         }}
                       >
-                        <span>Đăng ký lịch hẹn</span>
+                        <span>Register appointment</span>
                       </li>
                     </ul>
                   </div>
@@ -151,7 +151,7 @@ const AccountPage = () => {
                   <h1 className="vol-event-title text-justify">{account?.full_name}</h1>
                   <div className="d-flex">
                     <NavLink onClick={handleLogoutBtnClick} className="d-flex align-items-center">
-                      <FaSignOutAlt size={20} /> <span>Đăng xuất</span>
+                      <FaSignOutAlt size={20} /> <span>Logout</span>
                     </NavLink>
                   </div>
                 </div>

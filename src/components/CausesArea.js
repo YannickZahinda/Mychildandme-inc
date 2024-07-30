@@ -12,7 +12,7 @@ const CausesArea = () => {
                 <div className="section-icon">
                   <img src={sectionicon} alt="section-icon" />
                 </div>
-                <h2 className="section__title">Tin tức hoạt động</h2>
+                <h2 className="section__title">Activity News</h2>
               </div>
             </div>
           </div>
@@ -28,11 +28,10 @@ const CausesArea = () => {
                   </div>
                   <div className="blog-inner-content">
                     <h3 className="blog__title">
-                      Làng trẻ em SOS Vinh tổ chức tổng kết hoạt động hè của hơn 100 sinh viên tình
-                      nguyện Trường Đại học Vinh sdfsdffffffffffffffffffff
+                      SOS Children's Village Vinh organizes a review of summer activities for more than 100 volunteers from Vinh University sdfsdffffffffffffffffffff
                     </h3>
                     <a href="/donate" className="theme-btn">
-                      Xem thêm
+                      Read More
                     </a>
                   </div>
                 </div>
@@ -49,11 +48,10 @@ const CausesArea = () => {
                   </div>
                   <div className="blog-inner-content">
                     <h3 className="blog__title">
-                      Dự án Thư viện di động trong không gian sinh thái triển khai nhiều hoạt động
-                      mới
+                      Mobile Library Project in Ecological Space Implements New Activities
                     </h3>
                     <a href="/donate" className="theme-btn">
-                      Xem thêm
+                      Read More
                     </a>
                   </div>
                 </div>
@@ -70,11 +68,10 @@ const CausesArea = () => {
                   </div>
                   <div className="blog-inner-content">
                     <h3 className="blog__title">
-                      Học sinh Làng trẻ em SOS Vinh tham dự Phiên họp giả định Quốc hội trẻ em lần
-                      thứ nhất năm 2023
+                      SOS Children's Village Vinh Students Participate in the First Children’s Parliament Simulation in 2023
                     </h3>
                     <a href="/donate" className="theme-btn">
-                      Xem thêm
+                      Read More
                     </a>
                   </div>
                 </div>

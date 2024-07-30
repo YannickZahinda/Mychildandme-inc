@@ -91,7 +91,7 @@ const EventPostsGrid = () => {
                 disabled={page === totalPage || totalPage === 0}
                 onClick={handleBtnLoadMoreClick}
               >
-                Tải thêm
+               Load more
               </button>
             </div>
           </div>
