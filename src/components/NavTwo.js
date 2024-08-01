@@ -57,7 +57,7 @@ class NavTwo extends Component {
                     <ul className="d-flex align-items-center">
                       <li>
                         <a href="#">
-                          <i className="fa fa-envelope"></i>needhelp@oxpitan.com
+                          <i className="fa fa-envelope"></i>needhelp@mychildandme.org
                         </a>
                       </li>
                       <li>

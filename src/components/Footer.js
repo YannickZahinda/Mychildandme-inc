@@ -55,7 +55,7 @@ class Footer extends Component {
                               <input
                                 type="email"
                                 className="form-control"
-                                placeholder="Địa chỉ email"
+                                placeholder="type your email"
                               />
                             </div>
                           </div>

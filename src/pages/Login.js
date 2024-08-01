@@ -15,7 +15,7 @@ import { Link, Navigate } from 'react-router-dom'
 import { useState } from 'react'
 import validator from 'validator'
 import { authApi } from 'src/api/services'
-import ReactImg from '../assets/brand/logo3.png'
+import ReactImg from '../assets/brand/mwabana.png'
 import useAuth from 'src/components/hooks/useAuth'
 import ErrorModal from 'src/components/modals/ErrorModal'
 import LoadingModal from 'src/components/modals/LoadingModal'
@@ -165,9 +165,9 @@ const Login = () => {
                       <h2>Orphanage Website</h2>
                       <br></br>
                       <p>
-                        We care for, support, and provide for orphaned, abandoned, and children in difficult situations. nguyenanchi1919@gmail.com
+                        We care for, support, and provide for orphaned, abandoned, and children in difficult situations. 
                       </p>
-                      <p>Qwdsa@23131</p>
+                      <p>needhelp@mychildandmeinc.org</p>
                     </div>
                     <div className="d-flex align-items-center justify-content-center gap-2 mt-3">
                       <span>Don't have an account? </span>

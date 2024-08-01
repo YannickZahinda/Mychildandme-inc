@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Swiper from 'react-id-swiper'
 import 'swiper'
-import img1 from 'src/assets/images/bg2.jpg'
-import img2 from 'src/assets/images/bg3.jpg'
+import img1 from 'src/assets/images/mychildandm.jpeg'
+import img2 from 'src/assets/images/mychildandm.jpeg'
 import img3 from 'src/assets/images/bg4.jpg'
 import { NavLink } from 'react-router-dom'
 
@@ -36,9 +36,9 @@ const SliderTwo = () => {
                   <div className="row">
                     <div className="col-lg-8 mx-auto">
                       <div className="slider-heading">
-                        <p className="slider__meta">My Child And Me</p>
+                        <p className="slider__meta">Welcome to my child & me inc</p>
                         <h2 className="slider__title">
-                          Every child deserves to be loved.
+                           Helping Abandoned Mothers With Children
                         </h2>
                         <NavLink to="/donation" className="main-btn">
                           Donate Now

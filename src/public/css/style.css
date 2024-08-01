@@ -365,10 +365,11 @@ a:hover {
   align-items: center;
 }
 .header-area .header-top .ostion-top-wrap .ostion-logo {
-  height: 120px;
+  height: 100px;
   display: table;
   vertical-align: middle;
 }
+
 .header-area .header-top .ostion-top-wrap .ostion-logo a {
   height: 120px;
   display: table-cell;
