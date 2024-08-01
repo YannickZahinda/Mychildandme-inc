@@ -57,23 +57,23 @@ const VerifyAccount = () => {
   const [formValidate, setFormValidate] = useState({
     nationality: {
       invalid: false,
-      errorMessage: 'Vui lòng điền quốc tịch',
+      errorMessage: 'Please enter nationality',
     },
     religion: {
       invalid: false,
-      errorMessage: 'Vui lòng điền tôn giáo',
+      errorMessage: 'Please enter religion',
     },
     ethnicity: {
       invalid: false,
-      errorMessage: 'Vui lòng điền dân tộc',
+      errorMessage: 'Please enter ethnicity',
     },
     gender: {
       invalid: false,
-      errorMessage: 'Vui lòng chọn giới tính',
+      errorMessage: 'Please select gender',
     },
     citizen_id_number: {
       invalid: false,
-      errorMessage: 'Số CCCD không hợp lệ',
+      errorMessage: 'Invalid ID number',
     },
   })
 
@@ -87,19 +87,19 @@ const VerifyAccount = () => {
 
   const [successModalVisible, setSuccessModalVisible] = useState(false)
   const [successModalMessage, setSuccessModalMessage] = useState({
-    modalTile: '',
+    modalTitle: '',
     modalContent: '',
   })
 
   const [confirmModalVisible, setConfirmModalVisible] = useState(false)
   const [confirmModalMessage, setConfirmModalMessage] = useState({
-    modalTile: '',
+    modalTitle: '',
     modalContent: '',
   })
   const [loadingModalVisible, setLoadingModalVisible] = useState(false)
-  const [errormodalVisible, setErrorModalVisible] = useState(false)
+  const [errorModalVisible, setErrorModalVisible] = useState(false)
   const [errorModalMessage, setErrorModalMessage] = useState({
-    modalTile: '',
+    modalTitle: '',
     modalContent: '',
   })
 
@@ -136,11 +136,11 @@ const VerifyAccount = () => {
       } catch (error) {
         console.log(error)
         if (error?.error?.code === '414') {
-          setErrorMessage('Tài khoản của bạn đã được kích hoạt!')
+          setErrorMessage('Your account has been activated!')
           setErrorState(true)
         } else {
           setErrorMessage(
-            'Quá trình kích hoạt tài khoản xảy ra lỗi. Vui lòng kiểm tra lại đường dẫn!',
+            'There was an error in the account activation process. Please check the link again!',
           )
           setErrorState(true)
         }
@@ -159,7 +159,7 @@ const VerifyAccount = () => {
       getVerifyInfor()
       getProvinces()
     } else {
-      setErrorMessage('Quá trình kích hoạt tài khoản xảy ra lỗi. Vui lòng kiểm tra lại đường dẫn!')
+      setErrorMessage('There was an error in the account activation process. Please check the link again!')
       setErrorState(true)
     }
   }, [email, token])
@@ -291,8 +291,8 @@ const VerifyAccount = () => {
       setLoadingModalVisible(false)
       setSuccessModalMessage((prevSuccessModal) => ({
         ...prevSuccessModal,
-        modalTile: 'Thành Công!',
-        modalContent: 'Tài khoản của bạn đã được xác minh thành công',
+        modalTitle: 'Success!',
+        modalContent: 'Your account has been successfully verified',
       }))
       setSuccessModalVisible(true)
     } catch (error) {
@@ -300,8 +300,8 @@ const VerifyAccount = () => {
       setLoadingModalVisible(false)
       setErrorModalMessage((prevModalError) => ({
         ...prevModalError,
-        modalTile: 'Lỗi',
-        modalContent: 'Đã có lỗi xảy ra, vui lòng thử lại sau',
+        modalTitle: 'Error',
+        modalContent: 'An error has occurred, please try again later',
       }))
       setErrorModalVisible(true)
     }
@@ -321,305 +321,258 @@ const VerifyAccount = () => {
         <div className="d-flex flex-column aligin-items-center justify-content-center">
           <div className="d-flex justify-content-center mb-3">
             <Link to="/">
-              <CCardImage
-                className="sidebar-brand-full"
-                orientation="bottom"
-                src={ReactImg}
-                style={{ width: '100%' }}
-              />
+              <img src={ReactImg} className="login__image" alt="" />
             </Link>
           </div>
-          <h1 className="text-center">Xác nhận thông tin cá nhân</h1>
-          <div className="d-flex justify-content-center mb-3">
-            <div className="mt-3 p-4 bg-info text-red d-flex text-white align-items-center gap-2">
-              <span>{errorMessage}</span>
-            </div>
-          </div>
+          <h2 className="text-center text-danger">
+            {errorMessage}
+          </h2>
+          {errorMessage === 'Your account has been activated!' && (
+            <CButton
+              color="primary"
+              className="w-50 mx-auto my-3"
+              onClick={handleDirect}
+            >
+              Log In
+            </CButton>
+          )}
         </div>
       ) : (
-        formData?.first_name && (
-          <>
-            <LoadingModal isVisible={loadingModalVisible} setVisible={setLoadingModalVisible} />
-            <SuccessModal
-              modalMessage={successModalMessage}
-              isVisible={successModalVisible}
-              setVisible={setSuccessModalVisible}
-              onConfirmClick={handleDirect}
-              size="lg"
-            ></SuccessModal>
-            <ConfirmModal
-              modalMessage={confirmModalMessage}
-              isVisible={confirmModalVisible}
-              setVisible={setConfirmModalVisible}
-              handleConfirmBtnClick={handleConfirmBtnClick}
-            ></ConfirmModal>
-            <ErrorModal
-              modalMessage={errorModalMessage}
-              isVisible={errormodalVisible}
-              setVisible={setErrorModalVisible}
-            />
-            <div className="bg-light min-vh-100 d-flex flex-row align-items-center mb-5">
-              <CContainer>
-                <CRow className="justify-content-center">
-                  <CCol md={8}>
-                    <div className="mx-4 mb-3">
-                      <CCardImage
-                        className="sidebar-brand-full"
-                        orientation="bottom"
-                        src={ReactImg}
-                        style={{ width: '20%' }}
-                      />
-                    </div>
-                    <CCardGroup>
-                      <CCard className="mx-4">
-                        <CCardBody className="p-4">
-                          <h1 className="text-center">Xác nhận thông tin cá nhân</h1>
-
-                          <CForm className="mt-2">
-                            <div className="mb-2">
-                              <small>
-                                <i>
-                                  * Vui lòng hoàn thành thông tin cá nhân của bạn bên dưới để hoàn
-                                  tất quá trình đăng ký
-                                </i>
-                              </small>
-                            </div>
-                            <CRow>
-                              <CCol lg={6}>
-                                <CInputGroup className="mb-3">
-                                  <CFormInput
-                                    value={formData?.first_name}
-                                    name="first_name"
-                                    type="text"
-                                    placeholder="Tên*"
-                                    readOnly
-                                  />
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={6}>
-                                <CInputGroup className="mb-3">
-                                  <CFormInput
-                                    value={formData?.last_name}
-                                    name="last_name"
-                                    type="text"
-                                    placeholder="Họ và tên đệm*"
-                                    readOnly
-                                  />
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={6}>
-                                <CInputGroup className="mb-3">
-                                  <CFormInput
-                                    value={email}
-                                    name="mail_address"
-                                    type="email"
-                                    placeholder="Địa chỉ email*"
-                                    readOnly
-                                  />
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={6}>
-                                <CInputGroup className="mb-3">
-                                  <CFormInput
-                                    value={formData?.phone_number}
-                                    name="phone_number"
-                                    type="number"
-                                    placeholder="Số điện thoại*"
-                                    readOnly
-                                  />
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={6}>
-                                <CInputGroup className="mb-3">
-                                  <CFormInput
-                                    value={
-                                      formData?.date_of_birth &&
-                                      format(new Date(formData?.date_of_birth), 'dd/MM/yyyy')
-                                    }
-                                    name="date_of_birth"
-                                    type="text"
-                                    placeholder="Ngày sinh*"
-                                    readOnly
-                                  />
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={6}>
-                                <CInputGroup className="mb-3">
-                                  <CFormSelect
-                                    className="form-control"
-                                    name="gender"
-                                    value={formData.gender}
-                                    onChange={handleInputChange}
-                                  >
-                                    {!formData.gender && (
-                                      <option disabled selected>
-                                        Giới tính
-                                      </option>
-                                    )}
-                                    <option value={1}>Nam</option>
-                                    <option value={2}>Nữ</option>
-                                    <option value={0}>Khác</option>
-                                  </CFormSelect>
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={12}>
-                                <CInputGroup className="mb-3">
-                                  <CFormInput
-                                    value={formData.nationality}
-                                    name="nationality"
-                                    type="text"
-                                    placeholder="Quốc tịch*"
-                                    onChange={handleInputChange}
-                                    invalid={formValidate.nationality.invalid}
-                                  />
-                                  <CFormFeedback invalid>
-                                    {formValidate.nationality.errorMessage}
-                                  </CFormFeedback>
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={12}>
-                                <CInputGroup className="mb-4">
-                                  <CFormInput
-                                    value={formData.ethnicity}
-                                    name="ethnicity"
-                                    type="text"
-                                    placeholder="Dân tộc*"
-                                    onChange={handleInputChange}
-                                    invalid={formValidate.ethnicity.invalid}
-                                  />
-                                  <CFormFeedback invalid>
-                                    {formValidate.ethnicity.errorMessage}
-                                  </CFormFeedback>
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={12}>
-                                <CInputGroup className="mb-4">
-                                  <CFormInput
-                                    value={formData.religion}
-                                    name="religion"
-                                    type="text"
-                                    placeholder="Tôn giáo*"
-                                    onChange={handleInputChange}
-                                    invalid={formValidate.religion.invalid}
-                                  />
-                                  <CFormFeedback invalid>
-                                    {formValidate.religion.errorMessage}
-                                  </CFormFeedback>
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={12}>
-                                <CInputGroup className="mb-4">
-                                  <CFormInput
-                                    value={formData.citizen_id_number}
-                                    name="citizen_id_number"
-                                    type="number"
-                                    placeholder="Số căn cước công dân*"
-                                    onChange={handleInputChange}
-                                    invalid={formValidate.citizen_id_number.invalid}
-                                  />
-                                  <CFormFeedback invalid>
-                                    {formValidate.citizen_id_number.errorMessage}
-                                  </CFormFeedback>
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={6}>
-                                <CInputGroup className="mb-3">
-                                  <CFormSelect
-                                    className="form-control"
-                                    name="province_id"
-                                    value={formData.address.province_id}
-                                    onChange={handleAddressChange}
-                                  >
-                                    {!formData.address.province_id && (
-                                      <option disabled selected>
-                                        Chọn Tỉnh/Thành phố
-                                      </option>
-                                    )}
-
-                                    {provinces?.map((province, index) => (
-                                      <option key={index} value={province.province_id}>
-                                        {province.province_name}
-                                      </option>
-                                    ))}
-                                  </CFormSelect>
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={6}>
-                                <CInputGroup className="mb-3">
-                                  <CFormSelect
-                                    className="form-control"
-                                    name="district_id"
-                                    value={formData.address.district_id}
-                                    onChange={handleAddressChange}
-                                  >
-                                    {!formData.address.district_id && (
-                                      <option disabled selected>
-                                        Chọn Quận/Huyện
-                                      </option>
-                                    )}
-                                    {districts?.map((district, index) => (
-                                      <option key={index} value={district.district_id}>
-                                        {district.district_name}
-                                      </option>
-                                    ))}
-                                  </CFormSelect>
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={6}>
-                                <CInputGroup className="mb-3">
-                                  <CFormSelect
-                                    className="form-control"
-                                    name="ward_id"
-                                    value={formData.address.ward_id}
-                                    onChange={handleAddressChange}
-                                  >
-                                    {!formData.address.ward_id && (
-                                      <option disabled selected>
-                                        Chọn Xã/Phường
-                                      </option>
-                                    )}
-
-                                    {wards?.map((ward, index) => (
-                                      <option key={index} value={ward.ward_id}>
-                                        {ward.ward_name}
-                                      </option>
-                                    ))}
-                                  </CFormSelect>
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={6}>
-                                <CInputGroup className="mb-4">
-                                  <CFormInput
-                                    value={formData.address.address_detail}
-                                    name="address_detail"
-                                    type="text"
-                                    placeholder="Địa chỉ chi tiết*"
-                                    onChange={handleAddressChange}
-                                  />
-                                </CInputGroup>
-                              </CCol>
-                              <CCol lg={12}>
-                                <div className="d-grid">
-                                  <CButton
-                                    color="success"
-                                    onClick={handleSubmit}
-                                    disabled={!formValid}
-                                  >
-                                    Lưu
-                                  </CButton>
-                                </div>
-                              </CCol>
-                            </CRow>
-                          </CForm>
-                        </CCardBody>
-                      </CCard>
-                    </CCardGroup>
-                  </CCol>
-                </CRow>
-              </CContainer>
-            </div>
-          </>
-        )
+        <>
+          <CContainer>
+            <CRow>
+              <CCol md={8} className="mx-auto">
+                <CCardGroup>
+                  <CCard className="p-4">
+                    <CCardBody>
+                      <h1>Confirm Personal Information</h1>
+                      <CForm onSubmit={handleSubmit}>
+                        <CRow>
+                          <CCol md={6} className="mb-3">
+                            <CFormLabel htmlFor="first_name">First Name*</CFormLabel>
+                            <CFormInput
+                              type="text"
+                              id="first_name"
+                              name="first_name"
+                              value={formData.first_name}
+                              onChange={handleInputChange}
+                              invalid={formValidate.first_name?.invalid}
+                            />
+                            <CFormFeedback invalid>
+                              {formValidate.first_name?.errorMessage}
+                            </CFormFeedback>
+                          </CCol>
+                          <CCol md={6} className="mb-3">
+                            <CFormLabel htmlFor="last_name">Last Name*</CFormLabel>
+                            <CFormInput
+                              type="text"
+                              id="last_name"
+                              name="last_name"
+                              value={formData.last_name}
+                              onChange={handleInputChange}
+                              invalid={formValidate.last_name?.invalid}
+                            />
+                            <CFormFeedback invalid>
+                              {formValidate.last_name?.errorMessage}
+                            </CFormFeedback>
+                          </CCol>
+                          <CCol md={6} className="mb-3">
+                            <CFormLabel htmlFor="phone_number">Phone Number*</CFormLabel>
+                            <CFormInput
+                              type="text"
+                              id="phone_number"
+                              name="phone_number"
+                              value={formData.phone_number}
+                              onChange={handleInputChange}
+                              invalid={formValidate.phone_number?.invalid}
+                            />
+                            <CFormFeedback invalid>
+                              {formValidate.phone_number?.errorMessage}
+                            </CFormFeedback>
+                          </CCol>
+                          <CCol md={6} className="mb-3">
+                            <CFormLabel htmlFor="date_of_birth">Date of Birth*</CFormLabel>
+                            <CFormInput
+                              type="date"
+                              id="date_of_birth"
+                              name="date_of_birth"
+                              value={format(new Date(formData.date_of_birth), 'yyyy-MM-dd')}
+                              onChange={handleInputChange}
+                              invalid={formValidate.date_of_birth?.invalid}
+                            />
+                            <CFormFeedback invalid>
+                              {formValidate.date_of_birth?.errorMessage}
+                            </CFormFeedback>
+                          </CCol>
+                          <CCol md={6} className="mb-3">
+                            <CFormLabel htmlFor="gender">Gender</CFormLabel>
+                            <CFormSelect
+                              id="gender"
+                              name="gender"
+                              value={formData.gender}
+                              onChange={handleInputChange}
+                              invalid={formValidate.gender?.invalid}
+                            >
+                              <option value="">Select Gender</option>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                              <option value="other">Other</option>
+                            </CFormSelect>
+                            <CFormFeedback invalid>
+                              {formValidate.gender?.errorMessage}
+                            </CFormFeedback>
+                          </CCol>
+                          <CCol md={6} className="mb-3">
+                            <CFormLabel htmlFor="nationality">Nationality*</CFormLabel>
+                            <CFormInput
+                              type="text"
+                              id="nationality"
+                              name="nationality"
+                              value={formData.nationality}
+                              onChange={handleInputChange}
+                              invalid={formValidate.nationality?.invalid}
+                            />
+                            <CFormFeedback invalid>
+                              {formValidate.nationality?.errorMessage}
+                            </CFormFeedback>
+                          </CCol>
+                          <CCol md={6} className="mb-3">
+                            <CFormLabel htmlFor="ethnicity">Ethnicity*</CFormLabel>
+                            <CFormInput
+                              type="text"
+                              id="ethnicity"
+                              name="ethnicity"
+                              value={formData.ethnicity}
+                              onChange={handleInputChange}
+                              invalid={formValidate.ethnicity?.invalid}
+                            />
+                            <CFormFeedback invalid>
+                              {formValidate.ethnicity?.errorMessage}
+                            </CFormFeedback>
+                          </CCol>
+                          <CCol md={6} className="mb-3">
+                            <CFormLabel htmlFor="religion">Religion*</CFormLabel>
+                            <CFormInput
+                              type="text"
+                              id="religion"
+                              name="religion"
+                              value={formData.religion}
+                              onChange={handleInputChange}
+                              invalid={formValidate.religion?.invalid}
+                            />
+                            <CFormFeedback invalid>
+                              {formValidate.religion?.errorMessage}
+                            </CFormFeedback>
+                          </CCol>
+                          <CCol md={6} className="mb-3">
+                            <CFormLabel htmlFor="citizen_id_number">Citizen ID Number*</CFormLabel>
+                            <CFormInput
+                              type="text"
+                              id="citizen_id_number"
+                              name="citizen_id_number"
+                              value={formData.citizen_id_number}
+                              onChange={handleInputChange}
+                              invalid={formValidate.citizen_id_number?.invalid}
+                            />
+                            <CFormFeedback invalid>
+                              {formValidate.citizen_id_number?.errorMessage}
+                            </CFormFeedback>
+                          </CCol>
+                          <CCol md={6} className="mb-3">
+                            <CFormLabel htmlFor="province_id">Select Province/City</CFormLabel>
+                            <CFormSelect
+                              id="province_id"
+                              name="province_id"
+                              value={formData.address.province_id}
+                              onChange={handleAddressChange}
+                            >
+                              <option value="">Select Province/City</option>
+                              {provinces.map((province) => (
+                                <option key={province.province_id} value={province.province_id}>
+                                  {province.province_name}
+                                </option>
+                              ))}
+                            </CFormSelect>
+                          </CCol>
+                          <CCol md={6} className="mb-3">
+                            <CFormLabel htmlFor="district_id">Select District</CFormLabel>
+                            <CFormSelect
+                              id="district_id"
+                              name="district_id"
+                              value={formData.address.district_id}
+                              onChange={handleAddressChange}
+                            >
+                              <option value="">Select District</option>
+                              {districts.map((district) => (
+                                <option key={district.district_id} value={district.district_id}>
+                                  {district.district_name}
+                                </option>
+                              ))}
+                            </CFormSelect>
+                          </CCol>
+                          <CCol md={6} className="mb-3">
+                            <CFormLabel htmlFor="ward_id">Select Ward/Commune</CFormLabel>
+                            <CFormSelect
+                              id="ward_id"
+                              name="ward_id"
+                              value={formData.address.ward_id}
+                              onChange={handleAddressChange}
+                            >
+                              <option value="">Select Ward/Commune</option>
+                              {wards.map((ward) => (
+                                <option key={ward.ward_id} value={ward.ward_id}>
+                                  {ward.ward_name}
+                                </option>
+                              ))}
+                            </CFormSelect>
+                          </CCol>
+                          <CCol md={12} className="mb-3">
+                            <CFormLabel htmlFor="address_detail">Detailed Address*</CFormLabel>
+                            <CFormInput
+                              type="text"
+                              id="address_detail"
+                              name="address_detail"
+                              value={formData.address.address_detail}
+                              onChange={handleAddressChange}
+                              invalid={formValidate.address_detail?.invalid}
+                            />
+                            <CFormFeedback invalid>
+                              {formValidate.address_detail?.errorMessage}
+                            </CFormFeedback>
+                          </CCol>
+                        </CRow>
+                        <CButton type="submit" color="primary" disabled={!formValid}>
+                          Confirm
+                        </CButton>
+                      </CForm>
+                    </CCardBody>
+                  </CCard>
+                </CCardGroup>
+              </CCol>
+            </CRow>
+          </CContainer>
+          <SuccessModal
+            visible={successModalVisible}
+            onClose={() => setSuccessModalVisible(false)}
+            title={successModalMessage.modalTitle}
+            content={successModalMessage.modalContent}
+            onConfirm={() => setSuccessModalVisible(false)}
+          />
+          <ConfirmModal
+            visible={confirmModalVisible}
+            onClose={() => setConfirmModalVisible(false)}
+            title={confirmModalMessage.modalTitle}
+            content={confirmModalMessage.modalContent}
+            onConfirm={handleConfirmBtnClick}
+          />
+          <LoadingModal visible={loadingModalVisible} />
+          <ErrorModal
+            visible={errorModalVisible}
+            onClose={() => setErrorModalVisible(false)}
+            title={errorModalMessage.modalTitle}
+            content={errorModalMessage.modalContent}
+          />
+        </>
       )}
     </>
   )

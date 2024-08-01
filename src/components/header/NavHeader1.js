@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { CCardImage } from '@coreui/react'
-import ReactImg from '../../assets/brand/logo3.png'
+import ReactImg from '../../assets/brand/mwabana.png'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import useAuth from '../hooks/useAuth'
@@ -58,12 +58,12 @@ const NavHeader1 = () => {
                     <ul className="d-flex align-items-center">
                       <li>
                         <a href="#">
-                          <i className="fa fa-envelope"></i>needhelp@oxpitan.com
+                          <i className="fa fa-envelope"></i>needhelp@mychildandme.org
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i className="fa fa-phone-square"></i>666 888 0000
+                          <i className="fa fa-phone-square"></i>+1(773) 431-1269
                         </a>
                       </li>
                     </ul>
@@ -106,7 +106,7 @@ const NavHeader1 = () => {
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="https://www.instagram.com/mychildandmeinc/">
                           <i className="fa fa-instagram"></i>
                         </a>
                       </li>

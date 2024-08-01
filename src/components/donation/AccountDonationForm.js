@@ -58,7 +58,7 @@ const AccountDonationForm = () => {
 
   const [errormodalVisible, setErrorModalVisible] = useState(false)
   const [errorModalMessage, setErrorModalMessage] = useState({
-    modalTile: '',
+    modalTitle: '',
     modalContent: '',
   })
 
@@ -94,7 +94,7 @@ const AccountDonationForm = () => {
       }
     }
     // Get donation purposes
-    const getDonatioPurposes = async () => {
+    const getDonationPurposes = async () => {
       try {
         const response = await donationApi.getAllDonationPurposes()
         const result = response.result
@@ -103,15 +103,15 @@ const AccountDonationForm = () => {
         console.log(error)
       }
     }
-    getDonatioPurposes()
+    getDonationPurposes()
     getProvinces()
   }, [])
 
   // Init districts select options
   useEffect(() => {
-    if ((donor.address.province_id, provinces.length)) {
+    if (donor.address.province_id && provinces.length) {
       const province = provinces.find(
-        (province) => province.province_id == donor.address.province_id,
+        (province) => province.province_id === donor.address.province_id,
       )
       setDistricts(province.districts)
     }
@@ -121,7 +121,7 @@ const AccountDonationForm = () => {
   useEffect(() => {
     if (donor.address.district_id && districts.length) {
       const district = districts.find(
-        (district) => district.district_id == donor.address.district_id,
+        (district) => district.district_id === donor.address.district_id,
       )
       setWards(district?.wards)
     }
@@ -152,7 +152,7 @@ const AccountDonationForm = () => {
         console.log(error)
       }
     }
-    if (purposeId == 2 && families.length === 0) {
+    if (purposeId === 2 && families.length === 0) {
       getFamilies()
     } else {
       if (familyId) setFamilyId('')
@@ -190,16 +190,16 @@ const AccountDonationForm = () => {
         setLoadingModalVisible(false)
         setErrorModalMessage((prevModalError) => ({
           ...prevModalError,
-          modalTile: 'Lỗi',
-          modalContent: 'Đã có lỗi xảy ra, vui lòng thử lại sau',
+          modalTitle: 'Error',
+          modalContent: 'An error occurred, please try again later',
         }))
         setErrorModalVisible(true)
       }
     } else {
       setErrorModalMessage((prevModalError) => ({
         ...prevModalError,
-        modalTile: 'Lỗi',
-        modalContent: 'Đã có lỗi xảy ra, vui lòng thử lại sau',
+        modalTitle: 'Error',
+        modalContent: 'An error occurred, please try again later',
       }))
       setErrorModalVisible(true)
     }
@@ -209,55 +209,55 @@ const AccountDonationForm = () => {
     {
       type: 'text',
       id: 'inputdonorFirstName',
-      label: 'Nhập tên*',
+      label: 'Enter first name*',
       name: 'first_name',
       value: donor.first_name,
     },
     {
       type: 'text',
       id: 'inputdonorLastName',
-      label: 'Nhập họ và tên đệm*',
+      label: 'Enter last name*',
       name: 'last_name',
       value: donor.last_name,
     },
     {
       type: 'date',
       id: 'inputdonorDOB',
-      label: 'Nhập ngày sinh*',
+      label: 'Enter date of birth*',
       name: 'date_of_birth',
       value: donor.date_of_birth,
     },
     {
       type: 'select',
       id: 'inputdonorGender',
-      label: 'Chọn giới tính*',
+      label: 'Select gender*',
       name: 'gender',
       value: donor.gender,
 
       options: [
-        { label: 'Nam', value: 1 },
-        { label: 'Nữ', value: 2 },
-        { label: 'Khác', value: 0 },
+        { label: 'Male', value: 1 },
+        { label: 'Female', value: 2 },
+        { label: 'Other', value: 0 },
       ],
     },
     {
       type: 'number',
       id: 'inputdonorPhone',
-      label: 'Nhập số điện thoại*',
+      label: 'Enter phone number*',
       name: 'phone_number',
       value: donor.phone_number,
     },
     {
       type: 'text',
       id: 'inputdonorEmail',
-      label: 'Nhập địa chỉ email*',
+      label: 'Enter email address*',
       name: 'mail_address',
       value: donor.mail_address,
     },
     {
       type: 'select',
       id: 'inputProvinceId',
-      label: 'Chọn Tỉnh/Thành phố*',
+      label: 'Select Province/City*',
       name: 'province_id',
       value: donor.address.province_id,
       options: provinces.map((province) => ({
@@ -268,7 +268,7 @@ const AccountDonationForm = () => {
     {
       type: 'select',
       id: 'inputDistrictId',
-      label: 'Chọn Quận/Huyện*',
+      label: 'Select District/County*',
       name: 'district_id',
       value: donor.address.district_id,
       options: districts.map((district) => ({
@@ -279,11 +279,11 @@ const AccountDonationForm = () => {
     {
       type: 'select',
       id: 'inputWardId',
-      label: 'Chọn Phường/Xã*',
+      label: 'Select Ward/Commune*',
       name: 'ward_id',
       value: donor.address.ward_id,
       options: wards
-        ? wards?.map((ward) => ({
+        ? wards.map((ward) => ({
             label: ward.ward_name,
             value: ward.ward_id,
           }))
@@ -292,11 +292,12 @@ const AccountDonationForm = () => {
     {
       type: 'text',
       id: 'inputAddressDetail',
-      label: 'Địa chỉ chi tiết',
+      label: 'Detailed address',
       name: 'address_detail',
       value: donor.address.address_detail,
     },
   ]
+
   return (
     <>
       <LoadingModal isVisible={loadingModalVisible} setVisible={setLoadingModalVisible} />
@@ -309,9 +310,9 @@ const AccountDonationForm = () => {
         <div className="container">
           <div className="row form-shared-wrap">
             <div className="col-lg-8">
-              <h1 className="h1__form__title">Tài khoản Đăng ký tài trợ</h1>
+              <h1 className="h1__form__title">Account Registration for Sponsorship</h1>
               <div>
-                <h4 className="h__form__title mb-2">Mức tài trợ (VND)</h4>
+                <h4 className="h__form__title mb-2">Donation Amount (VND)</h4>
                 <div className="d-flex mb-4 gap-5">
                   <button
                     className={!amountIpState ? 'donate-amount-btn-active' : 'donate-amount-btn'}
@@ -321,7 +322,7 @@ const AccountDonationForm = () => {
                       setAmountInvalid(false)
                     }}
                   >
-                    300.000 VND
+                    300,000 VND
                   </button>
                   <button
                     className={amountIpState ? 'donate-amount-btn-active' : 'donate-amount-btn'}
@@ -331,7 +332,7 @@ const AccountDonationForm = () => {
                       setAmountInvalid(true)
                     }}
                   >
-                    Mức khác
+                    Other amount
                   </button>
                   {amountIpState && (
                     <div>
@@ -344,7 +345,7 @@ const AccountDonationForm = () => {
                       />
                       <span>
                         <small>
-                          <i>Mức tài trợ tối thiểu là 100.000 vnd</i>
+                          <i>Minimum donation amount is 100,000 VND</i>
                         </small>
                       </span>
                     </div>
@@ -352,14 +353,13 @@ const AccountDonationForm = () => {
                 </div>
               </div>
               <div>
-                <h4 className="h__form__title mb-0">Chiến dịch tài trợ</h4>
+                <h4 className="h__form__title mb-0">Sponsorship Campaign</h4>
                 <span>
                   <small>
                     <i>
-                      Nhấn vào
-                      <NavLink to={'../donation/programs'}> liên kết này </NavLink>
-                      để xem các chiến dịch tài trợ của chúng tôi và cách chúng tôi sử dụng khoản
-                      tài trợ của bạn.
+                      Click on
+                      <NavLink to={'../donation/programs'}> this link </NavLink>
+                      to view our sponsorship campaigns and how we use your donation.
                     </i>
                   </small>
                 </span>
@@ -381,15 +381,15 @@ const AccountDonationForm = () => {
                     </div>
                   </form>
                 </div>
-                {purposeId == DonationPurpose.familyDonate.code && (
+                {purposeId === DonationPurpose.familyDonate.code && (
                   <>
-                    <h4 className="h__form__title mb-0">Chọn gia đình muốn tài trợ</h4>
+                    <h4 className="h__form__title mb-0">Select the family to sponsor</h4>
                     <span>
                       <small>
                         <i>
-                          Nhấn vào
-                          <NavLink> liên kết này </NavLink>
-                          để xem chi tiết về các gia đình trẻ trong trại trẻ của chúng tôi.
+                          Click on
+                          <NavLink> this link </NavLink>
+                          to view details about the families in our orphanage.
                         </i>
                       </small>
                     </span>
@@ -405,7 +405,7 @@ const AccountDonationForm = () => {
                               setFamilyId(e.target.value)
                             }}
                           >
-                            {!familyId && <option value={''}>Chọn gia đình *</option>}
+                            {!familyId && <option value={''}>Select family *</option>}
                             {families.map((family, index) => (
                               <option value={family.family_id} key={index}>
                                 {family.family_name}
@@ -419,9 +419,9 @@ const AccountDonationForm = () => {
                 )}
               </div>
               <div className="form-shared">
-                <h3 className="h__form__title mb-2">Thông tin nhà tài trợ</h3>
+                <h3 className="h__form__title mb-2">Donor Information</h3>
                 <small>
-                  <i>Các trường đánh dấu * là bắt buộc phải nhập</i>
+                  <i>Fields marked with * are required</i>
                 </small>
                 <form action="#">
                   <div className="row">
@@ -437,7 +437,7 @@ const AccountDonationForm = () => {
                         <textarea
                           className="textarea h-auto"
                           name="message"
-                          placeholder="Lời nhắn*"
+                          placeholder="Message*"
                           value={message}
                           onChange={(e) => {
                             setMessage(e.target.value)
@@ -452,7 +452,7 @@ const AccountDonationForm = () => {
                         onClick={handleSubmit}
                         disabled={!formValid}
                       >
-                        Tài trợ
+                        Donate
                       </button>
                     </div>
                   </div>
@@ -461,12 +461,10 @@ const AccountDonationForm = () => {
             </div>
             <div className="col-lg-4">
               <div className="sidebar-shared">
-                <div className="fun-content p-4 border rounded-lg ">
+                <div className="fun-content p-4 border rounded-lg">
                   <div className="section-heading mb-4">
                     <h4 className="section__desc">
-                      Khoản tiền tài trợ của bạn, dù lớn hay nhỏ, đều quan trọng với chúng tôi trên
-                      hành trình mang lại nụ cười và tương lai cho trẻ em mồ côi, bị bỏ rơi và có
-                      hoàn cảnh đặc biệt khó khăn.
+                      Your donation, whether large or small, is important to us in our journey to bring smiles and a future to orphaned, abandoned, and children in special hardship.
                     </h4>
                   </div>
                   <div className="fun-item fun-item1">

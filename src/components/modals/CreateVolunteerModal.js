@@ -22,33 +22,34 @@ const CreateVolunteerModal = ({ isVisible, setVisible, handleSubmit }) => {
   const [formValidate, setFormValidate] = useState({
     first_name: {
       invalid: false,
-      errorMessage: 'Vui lòng điền tên',
+      errorMessage: 'Please enter your first name',
     },
     last_name: {
       invalid: false,
-      errorMessage: 'Vui lòng điền họ',
+      errorMessage: 'Please enter your last name',
     },
     date_of_birth: {
       invalid: false,
-      errorMessage: 'Ngày sinh không hợp lệ',
+      errorMessage: 'Invalid date of birth',
     },
     gender: {
       invalid: false,
-      errorMessage: 'Vui lòng chọn giới tính',
+      errorMessage: 'Please select your gender',
     },
     mail_address: {
       invalid: false,
-      errorMessage: 'Địa chỉ email không hợp lệ',
+      errorMessage: 'Invalid email address',
     },
     phone_number: {
       invalid: false,
-      errorMessage: 'Số điện thoại không hợp lệ',
+      errorMessage: 'Invalid phone number',
     },
     biography: {
       invalid: false,
-      errorMessage: 'Vui lòng nhập tiểu sử',
+      errorMessage: 'Please enter your biography',
     },
-  })
+  });
+  
   const [formValid, setFormValid] = useState(false)
 
   useEffect(() => {
@@ -141,16 +142,14 @@ const CreateVolunteerModal = ({ isVisible, setVisible, handleSubmit }) => {
           <div className="col-md-6 text-justify pr-4">
             <p>
               <i>
-                Vui lòng điền vào các trường bên dưới để đăng ký tham gia vào sự kiện tình nguyện
-                tại trại trẻ của chúng tôi.
+              Please fill out the fields below to register for participating in the volunteer event at our children's home.
               </i>
             </p>
           </div>
           <div className="col-md-6 text-justify pl-4">
             <p>
               <i>
-                Hoặc <a href="#">Đăng nhập</a> vào tài khoản bạn đã tạo ở website. Bạn chưa có tài
-                khoản?<a href="#"> Đăng ký</a> ngay.
+                Or <a href="#">Login</a> to the account you created on the website. Don’t have an account? <a href="#">Register</a> Now.
               </i>
             </p>
           </div>
@@ -194,10 +193,10 @@ const CreateVolunteerModal = ({ isVisible, setVisible, handleSubmit }) => {
                       onChange={handleInputChange}
                     >
                       <option disabled selected>
-                        Giới tính*
+                        Gender*
                       </option>
-                      <option value={1}>Nam</option>
-                      <option value={2}>Nữ</option>
+                      <option value={1}>Male</option>
+                      <option value={2}>Female</option>
                     </CFormSelect>
                   </div>
                 </div>
@@ -208,7 +207,7 @@ const CreateVolunteerModal = ({ isVisible, setVisible, handleSubmit }) => {
                       name="date_of_birth"
                       value={data.date_of_birth}
                       invalid={formValidate.date_of_birth.invalid}
-                      placeholder="Ngày sinh*"
+                      placeholder="Date of birth*"
                       onChange={handleInputChange}
                     />
                   </div>
@@ -220,7 +219,7 @@ const CreateVolunteerModal = ({ isVisible, setVisible, handleSubmit }) => {
                       name="mail_address"
                       value={data.mail_address}
                       invalid={formValidate.mail_address.invalid}
-                      placeholder="Địa chỉ email*"
+                      placeholder="Email address*"
                       onChange={handleInputChange}
                     />
                   </div>
@@ -232,7 +231,7 @@ const CreateVolunteerModal = ({ isVisible, setVisible, handleSubmit }) => {
                       name="phone_number"
                       value={data.phone_number}
                       invalid={formValidate.phone_number.invalid}
-                      placeholder="Số điện thoại*"
+                      placeholder="Phone number*"
                       onChange={handleInputChange}
                     />
                   </div>
@@ -243,7 +242,7 @@ const CreateVolunteerModal = ({ isVisible, setVisible, handleSubmit }) => {
                       className="textarea h-auto w-100 p-3"
                       value={data.biography}
                       name="biography"
-                      placeholder="Hãy mô tả về bản thân bạn để giúp chúng tôi đánh giá bạn có phù hợp hay không tham gia hoạt động tình nguyện."
+                      placeholder="Please describe yourself to help us assess whether you are suitable to participate in the volunteer activities."
                       rows={5}
                       invalid={formValidate.biography.invalid}
                       onChange={handleInputChange}
@@ -262,7 +261,7 @@ const CreateVolunteerModal = ({ isVisible, setVisible, handleSubmit }) => {
               handleSubmit(data)
             }}
           >
-            GỬI
+            SEND
           </button>
         </div>
       </CModalBody>

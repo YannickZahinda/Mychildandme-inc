@@ -21,14 +21,14 @@ const EventPostDetailPage = () => {
   const volunteerApi = volunteerService()
   const [successModalVisible, setSuccessModalVisible] = useState(false)
   const [successModalMessage, setSuccessModalMessage] = useState({
-    modalTile: '',
-    modalContent: '',
+    modalTile: '', // "Modal Title"
+    modalContent: '', // "Modal Content"
   })
 
   const [errormodalVisible, setErrorModalVisible] = useState(false)
   const [errorModalMessage, setErrorModalMessage] = useState({
-    modalTile: '',
-    modalContent: '',
+    modalTile: 'Error',
+    modalContent: 'An error occurred, please try again later',
   })
 
   const [biographyModalVisible, setBiographyModalVisible] = useState(false)
@@ -63,8 +63,8 @@ const EventPostDetailPage = () => {
       await volunteerApi.memberApplyEvent(JSON.stringify(data))
       setSuccessModalMessage((prevSuccessModal) => ({
         ...prevSuccessModal,
-        modalTile: 'Thành công!',
-        modalContent: 'Đăng ký tham gia sự kiện tình nguyện thành công',
+        modalTile: 'Success!',
+        modalContent: 'Successfully registered to participate in the volunteer event',
       }))
       setApplyState(true)
       setSuccessModalVisible(true)
@@ -75,8 +75,8 @@ const EventPostDetailPage = () => {
       } else {
         setErrorModalMessage((prevModalError) => ({
           ...prevModalError,
-          modalTile: 'Lỗi',
-          modalContent: 'Đã có lỗi xảy ra, vui lòng thử lại sau',
+          modalTile: 'Error',
+          modalContent: 'An error occurred, please try again later',
         }))
         setErrorModalVisible(true)
       }
@@ -94,16 +94,16 @@ const EventPostDetailPage = () => {
       setCreateVolunteerModalVisible(false)
       setSuccessModalMessage((prevSuccessModal) => ({
         ...prevSuccessModal,
-        modalTile: 'Thành công!',
-        modalContent: 'Đăng ký tham gia sự kiện tình nguyện thành công',
+        modalTile: 'Success!',
+        modalContent: 'Successfully registered to participate in the volunteer event',
       }))
       setSuccessModalVisible(true)
     } catch (error) {
       console.log(error)
       setErrorModalMessage((prevModalError) => ({
         ...prevModalError,
-        modalTile: 'Lỗi',
-        modalContent: 'Đã có lỗi xảy ra, vui lòng thử lại sau',
+        modalTile: 'Error',
+        modalContent: 'An error occurred, please try again later',
       }))
       setErrorModalVisible(true)
     }
@@ -143,12 +143,9 @@ const EventPostDetailPage = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="section-heading mixer-heading z-100 text-center pl-5 pr-5">
-              <h1 className="text__white mb-3">Tình nguyện viên</h1>
+              <h1 className="text__white mb-3">Volunteer</h1>
               <h4 className="text__white">
-                Chúng tôi đang tìm kiếm những tâm hồn nhân văn, những người mong muốn làm thay đổi
-                tích cực trong cuộc sống của trẻ mồ côi. Hãy trở thành một tình nguyện viên tại trại
-                trẻ mồ côi, để chúng ta cùng chia sẻ yêu thương và tạo nên những kỷ niệm ý nghĩa cho
-                những đứa trẻ, giúp họ xây dựng tương lai lạc quan và đầy hứa hẹn.
+                We are looking for compassionate souls who want to make a positive change in the lives of orphaned children. Become a volunteer at the orphanage to share love and create meaningful memories for these children, helping them build a hopeful and promising future.
               </h4>
             </div>
           </div>
@@ -166,26 +163,26 @@ const EventPostDetailPage = () => {
                   </div>
                   <div className="vol-event-card-header d-flex gap-3">
                     <div className="vol-event-time">
-                      Ngày {moment(post?.event_start_date).format('DD-MM-YYYY hh:mm A')} ~{' '}
+                      Date {moment(post?.event_start_date).format('DD-MM-YYYY hh:mm A')} ~{' '}
                       {moment(post?.event_end_date).format('DD-MM-YYYY hh:mm A')}
                     </div>
                     <div className="vol-event-time">
                       {post?.is_applied
-                        ? 'Bạn đã đăng ký sự kiện này'
+                        ? 'You have registered for this event'
                         : post?.is_accepting
-                        ? 'Chấp nhận tham gia'
-                        : 'Đã đủ tình nguyện viên'}
+                        ? 'Accepting participants'
+                        : 'Volunteer slots are full'}
                     </div>
                   </div>
                   <div className="vol-event-label">
                     <span className="vol-event-summary">
-                      <b className="vol-event-summary-b">Tổng quan sự kiện:</b> {post?.summary}
+                      <b className="vol-event-summary-b">Event Overview:</b> {post?.summary}
                     </span>
                   </div>
                   <div className="vol-event-label">
                     <span className="vol-event-summary">
-                      <b className="vol-event-summary-b">Số lượng tham gia:</b>{' '}
-                      {post?.event_maximum_participant} Tình nguyện viên.
+                      <b className="vol-event-summary-b">Number of participants:</b>{' '}
+                      {post?.event_maximum_participant} Volunteers.
                     </span>
                   </div>
                   <div className="d-flex gap-3 vol-event-btn-group">
@@ -194,14 +191,14 @@ const EventPostDetailPage = () => {
                       disabled={post?.is_applied}
                       onClick={handleApplyBtnClick}
                     >
-                      Đăng ký tham gia
+                      Register to participate
                     </button>
                   </div>
                 </div>
               </div>
             </div>
             <div className="col-lg-12 mt-5">
-              <h3 className="vol-event-title event-headline mb-0">Nội dung chi tiết</h3>
+              <h3 className="vol-event-title event-headline mb-0">Detailed Content</h3>
               <div className="solid-line"></div>
               {post?.event_details?.map((eventDetail, index) => (
                 <Fragment key={index}>

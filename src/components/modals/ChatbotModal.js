@@ -72,7 +72,7 @@ const ChatbotModal = () => {
     <>
       <div className={chatbotState ? 'chat-screen' : 'chat-screen hide'}>
         <div className="chat-header">
-          <div className="chat-header-title">Chat hỗ trợ</div>
+          <div className="chat-header-title">Chat Support</div>
           <div className="chat-header-option">
             <button className="p-0 bg-transparent border-0" onClick={() => setChatbotState(false)}>
               <FaMinus className="text-white" />
@@ -80,7 +80,7 @@ const ChatbotModal = () => {
           </div>
         </div>
         <div className="chat-body" ref={chatBodyRef}>
-          <div className="chat-bubble you">Tôi có thể giúp gì cho bạn?</div>
+          <div className="chat-bubble you">How can I help you ?</div>
           {messages && (
             <>
               {messages.map((mess, index) => (
@@ -170,7 +170,7 @@ const ChatbotModal = () => {
         <div className="chat-input">
           <input
             type="text"
-            placeholder="Nhập tin nhắn..."
+            placeholder="Enter message..."
             value={userMessage}
             onChange={handleUserInputChange}
             onKeyDown={handleKeyPress}

@@ -84,7 +84,7 @@ const AccountFirstApplicantForm = ({
     {
       type: 'text',
       id: 'inputApplicantFirstName',
-      label: 'Nhập tên*',
+      label: 'Enter First Name*',
       name: 'first_name',
       value: applicant.first_name,
       readOnly: true,
@@ -92,7 +92,7 @@ const AccountFirstApplicantForm = ({
     {
       type: 'text',
       id: 'inputApplicantLastName',
-      label: 'Nhập họ và tên đệm*',
+      label: 'Enter Last Name*',
       name: 'last_name',
       value: applicant.last_name,
       readOnly: true,
@@ -100,7 +100,7 @@ const AccountFirstApplicantForm = ({
     {
       type: 'date',
       id: 'inputApplicantDOB',
-      label: 'Nhập ngày sinh*',
+      label: 'Enter Date of Birth*',
       name: 'date_of_birth',
       value: applicant.date_of_birth,
       readOnly: true,
@@ -108,7 +108,7 @@ const AccountFirstApplicantForm = ({
     {
       type: 'text',
       id: 'inputApplicantNationality',
-      label: 'Nhập quốc tịch*',
+      label: 'Enter Nationality*',
       name: 'nationality',
       value: applicant.nationality,
       readOnly: true,
@@ -116,7 +116,7 @@ const AccountFirstApplicantForm = ({
     {
       type: 'text',
       id: 'inputApplicantEthnicity',
-      label: 'Nhập dân tộc*',
+      label: 'Enter Ethnicity*',
       name: 'ethnicity',
       value: applicant.ethnicity,
       readOnly: true,
@@ -124,7 +124,7 @@ const AccountFirstApplicantForm = ({
     {
       type: 'text',
       id: 'inputApplicantReligion',
-      label: 'Nhập tôn giáo*',
+      label: 'Enter Religion*',
       name: 'religion',
       value: applicant.religion,
       readOnly: true,
@@ -132,34 +132,34 @@ const AccountFirstApplicantForm = ({
     {
       type: 'select',
       id: 'inputApplicantGender',
-      label: 'Chọn giới tính*',
+      label: 'Select Gender*',
       name: 'gender',
       value: applicant.gender,
       options: [
-        { label: 'Nam', value: 1 },
-        { label: 'Nữ', value: 2 },
-        { label: 'Khác', value: 0 },
+        { label: 'Male', value: 1 },
+        { label: 'Female', value: 2 },
+        { label: 'Other', value: 0 },
       ],
       readOnly: true,
     },
     {
       type: 'select',
-      id: 'inputCitizsfsdenImg2',
-      label: 'Chọn tình trạng hôn nhân*',
+      id: 'inputMaritalStatus',
+      label: 'Select Marital Status*',
       value: applicant.marital_status_id,
       onChange: handleMaritalStatusChange,
       options: [
-        { label: 'Chưa kết hôn', value: MaritalStatus.single.code },
-        { label: 'Sống chung chưa kết hôn', value: MaritalStatus.engaged.code },
-        { label: 'Đã có vợ/chồng', value: MaritalStatus.married.code },
-        { label: 'Góa', value: MaritalStatus.widow.code },
-        { label: 'Ly hôn hoặc ly thân', value: MaritalStatus.divorce.code },
+        { label: 'Single', value: MaritalStatus.single.code },
+        { label: 'Living Together but Not Married', value: MaritalStatus.engaged.code },
+        { label: 'Married', value: MaritalStatus.married.code },
+        { label: 'Widowed', value: MaritalStatus.widow.code },
+        { label: 'Divorced or Separated', value: MaritalStatus.divorce.code },
       ],
     },
     {
       type: 'number',
       id: 'inputApplicantPhone',
-      label: 'Nhập số điện thoại*',
+      label: 'Enter Phone Number*',
       name: 'phone_number',
       value: applicant.phone_number,
       readOnly: true,
@@ -167,7 +167,7 @@ const AccountFirstApplicantForm = ({
     {
       type: 'text',
       id: 'inputApplicantEmail',
-      label: 'Nhập địa chỉ email*',
+      label: 'Enter Email Address*',
       name: 'mail_address',
       value: applicant.mail_address,
       readOnly: true,
@@ -175,7 +175,7 @@ const AccountFirstApplicantForm = ({
     {
       type: 'select',
       id: 'inputProvinceId',
-      label: 'Chọn Tỉnh/Thành phố*',
+      label: 'Select Province/City*',
       name: 'province_id',
       value: applicant.address.province_id,
       options: provinces.map((province) => ({
@@ -187,7 +187,7 @@ const AccountFirstApplicantForm = ({
     {
       type: 'select',
       id: 'inputDistrictId',
-      label: 'Chọn Quận/Huyện*',
+      label: 'Select District*',
       name: 'district_id',
       value: applicant.address.district_id,
       options: districts.map((district) => ({
@@ -199,7 +199,7 @@ const AccountFirstApplicantForm = ({
     {
       type: 'select',
       id: 'inputWardId',
-      label: 'Chọn Phường/Xã*',
+      label: 'Select Ward*',
       name: 'ward_id',
       value: applicant.address.ward_id,
       options: wards.map((ward) => ({
@@ -211,7 +211,7 @@ const AccountFirstApplicantForm = ({
     {
       type: 'text',
       id: 'inputAddressDetail',
-      label: 'Địa chỉ chi tiết',
+      label: 'Detailed Address',
       name: 'address_detail',
       value: applicant.address.address_detail,
       readOnly: true,
@@ -220,23 +220,23 @@ const AccountFirstApplicantForm = ({
       col: 12,
       type: 'number',
       id: 'inputApplicantCitizen',
-      label: 'Nhập số căn cước công dân*',
+      label: 'Enter Citizen ID Number*',
       name: 'citizen_id_number',
       value: applicant.citizen_id_number,
       readOnly: true,
     },
     {
-      formLabel: 'Chọn ảnh CCCD mặc trước*',
+      formLabel: 'Select Front ID Card Image*',
       type: 'file',
       id: 'inputCitizenImg1',
-      label: 'Chọn ảnh CCCD mặc trước*',
+      label: 'Select Front ID Card Image*',
       onChange: handleFrontImageChange,
     },
     {
-      formLabel: 'Chọn ảnh CCCD mặc sau*',
+      formLabel: 'Select Back ID Card Image*',
       type: 'file',
       id: 'inputCitizenImg2',
-      label: 'Chọn ảnh CCCD mặc sau*',
+      label: 'Select Back ID Card Image*',
       onChange: handleBackImageChange,
     },
   ]

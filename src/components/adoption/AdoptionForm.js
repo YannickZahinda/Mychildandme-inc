@@ -225,8 +225,8 @@ const AdoptionForm = () => {
         setLoadingModalVisible(false)
         setSuccessModalMessage((prevSuccessModal) => ({
           ...prevSuccessModal,
-          modalTile: 'Thành công!',
-          modalContent: 'Đơn đăng ký của bạn sẽ được xem xét và phản hồi qua email.',
+          modalTile: 'Success!',
+          modalContent: 'Your application will be reviewed and responded to via email.',
         }))
         setSuccessModalVisible(true)
         setDone(true)
@@ -234,8 +234,8 @@ const AdoptionForm = () => {
         setLoadingModalVisible(false)
         setErrorModalMessage((prevModalError) => ({
           ...prevModalError,
-          modalTile: 'Lỗi',
-          modalContent: 'Đã có lỗi xảy ra, vui lòng thử lại sau',
+          modalTile: 'Error',
+          modalContent: 'An Error occured, please try again later',
         }))
         setErrorModalVisible(true)
       }
@@ -271,12 +271,12 @@ const AdoptionForm = () => {
           <div className="row">
             <div className="col-lg-8 mx-auto">
               <div className="section-heading text-center">
-                <h2 className="section__title">Đăng ký nhận thông tin trẻ đang chờ nhận nuôi</h2>
+                <h2 className="section__title">Register to receive information about children awaiting adoption</h2>
               </div>
             </div>
           </div>
           <div className="row form-shared-wrap">
-            <h3 className="form__title">Thông tin cá nhân</h3>
+            <h3 className="form__title">Personal information</h3>
             <div className="form-shared">
               <form action="#">
                 <div className="row">
@@ -293,7 +293,7 @@ const AdoptionForm = () => {
                   {spouseState && (
                     <>
                       <div className="col-lg-12">
-                        <h3 className="form__title">Thông tin vợ/chồng</h3>
+                        <h3 className="form__title">Spouse information</h3>
                       </div>
                       <SpouseForm
                         spouse={spouse}
@@ -304,14 +304,14 @@ const AdoptionForm = () => {
                     </>
                   )}
                   <div className="col-lg-12">
-                    <h3 className="form__title">Lý do nhận nuôi</h3>
+                    <h3 className="form__title">Reason for adoption</h3>
                   </div>
                   <div className="col-lg-12">
                     <div className="form-group">
                       <textarea
                         className="textarea"
                         name="message"
-                        placeholder="Nhập lý do*"
+                        placeholder="Enter reason*"
                         value={reason}
                         onChange={handleReasonChange}
                       ></textarea>
@@ -323,7 +323,7 @@ const AdoptionForm = () => {
                       onClick={handleSubmit}
                       disabled={!formValid}
                     >
-                      Gửi
+                      Send
                     </button>
                   </div>
                 </div>

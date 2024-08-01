@@ -26,42 +26,42 @@ const VolunteerHistoryTab = ({ accountId }) => {
           <div className="col-lg-12">
             <div className="mt-5">
               <h4 className="event-headline text-bold mt-5 mb-3">
-                Lịch sử đăng ký sự kiện tình nguyện
+                Volunteer Event Registration History
               </h4>
               {events?.length > 0 &&
                 events?.map((ev, index) => (
                   <Fragment key={index}>
                     <div className="row justify-content-between volunteer-history-card">
                       <div className="col-lg-5 p-0">
-                        <img src={ev?.image} className="article-detail-img"></img>
+                        <img src={ev?.image} className="article-detail-img" alt="Event" />
                       </div>
                       <div className="col-lg-7 col-md-12 p-0">
                         <div className="volunteer-history-box ">
                           <table>
                             <tbody>
                               <tr>
-                                <th>Ngày đăng ký</th>
+                                <th>Registration Date</th>
                                 <td>{moment(ev?.register_time).format('DD/MM/YYYY')}</td>
                               </tr>
                               <tr>
-                                <th>Sự kiện</th>
+                                <th>Event</th>
                                 <td>{ev?.title}</td>
                               </tr>
                               <tr>
-                                <th>Thời gian</th>
+                                <th>Time</th>
                                 <td>
                                   {moment(ev?.event_start_date).format('DD/MM/YYYY')} ~{' '}
                                   {moment(ev?.event_end_date).format('DD/MM/YYYY')}
                                 </td>
                               </tr>
                               <tr>
-                                <th>Nội dung</th>
+                                <th>Content</th>
                                 <td>
                                   <span className="text-line-3">{ev?.summary}</span>
                                 </td>
                               </tr>
                               <tr>
-                                <th>Trạng thái</th>
+                                <th>Status</th>
                                 <td>{ev?.apply_status}</td>
                               </tr>
                             </tbody>
@@ -80,41 +80,37 @@ const VolunteerHistoryTab = ({ accountId }) => {
                     }
                     className="article-detail-img"
                     alt=""
-                  ></img>
+                  />
                 </div>
                 <div className="col-7 p-0">
                   <div className="volunteer-history-box ">
                     <table>
                       <tbody>
                         <tr>
-                          <th>Ngày đăng ký</th>
+                          <th>Registration Date</th>
                           <td>20/12/12</td>
                         </tr>
                         <tr>
-                          <th>Sự kiện</th>
+                          <th>Event</th>
                           <td>
-                            Tình nguyện viên ơi, hãy cùng chung tay mang đến một Giáng sinh ấm áp
-                            cho trẻ em mồ côi
+                            Volunteers, let's come together to bring a warm Christmas to orphaned children
                           </td>
                         </tr>
                         <tr>
-                          <th>Thời gian</th>
-                          <td>Ngày 22-12-2023 12:00 AM ~ 31-12-2023 12:00 AM</td>
+                          <th>Time</th>
+                          <td>22-12-2023 12:00 AM ~ 31-12-2023 12:00 AM</td>
                         </tr>
                         <tr>
-                          <th>Nội dung</th>
+                          <th>Content</th>
                           <td>
                             <span className="text-line-3">
-                              Trại trẻ mồ côi là nơi nuôi dưỡng, chăm sóc những đứa trẻ không có cha
-                              mẹ. Trong dịp Giáng sinh sắp tới, trại trẻ mồ côi cần rất nhiều sự
-                              giúp đỡ của các tình nguyện viên để mang đến một Giáng sinh ấm áp cho
-                              các em.
+                              An orphanage is a place that nurtures and takes care of children without parents. During the upcoming Christmas, the orphanage needs a lot of help from volunteers to bring a warm Christmas to the children.
                             </span>
                           </td>
                         </tr>
                         <tr>
-                          <th>Trạng thái</th>
-                          <td>Đã xác nhận</td>
+                          <th>Status</th>
+                          <td>Confirmed</td>
                         </tr>
                       </tbody>
                     </table>

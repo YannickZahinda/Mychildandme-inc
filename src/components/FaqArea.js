@@ -34,7 +34,7 @@ const FaqArea = () => {
               <div className="section-icon">
                 <img src={sectionicon} alt="section-icon" />
               </div>
-              <h2 className="section__title">Câu hỏi thường gặp (FAQs)</h2>
+              <h2 className="section__title">Frequently Asked Questions (FAQs)</h2>
             </div>
             <div className="faq-img-box">
               <img src="/images/faq-img.jpg" alt="" />

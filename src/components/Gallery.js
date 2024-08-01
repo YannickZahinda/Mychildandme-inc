@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import img from 'src/assets/images/103525.jpg'
-import img1 from 'src/assets/images/13-hinh-anh-1-scaled.jpg'
+import img1 from 'src/assets/images/mychildandm.jpeg'
 import { FaAngleLeft, FaAngleRight, FaForward, FaTimes } from 'react-icons/fa'
 
 const Gallery = () => {

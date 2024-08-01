@@ -21,62 +21,62 @@ const ApplicantForm = ({
   const [formValidate, setFormValidate] = useState({
     first_name: {
       invalid: false,
-      errorMessage: 'Vui lòng điền tên',
+      errorMessage: 'Please enter first name',
     },
     last_name: {
       invalid: false,
-      errorMessage: 'Vui lòng điền họ',
+      errorMessage: 'Please enter last name',
     },
     date_of_birth: {
       invalid: false,
-      errorMessage: 'Ngày sinh không hợp lệ',
+      errorMessage: 'Invalid date of birth',
     },
     gender: {
       invalid: false,
-      errorMessage: 'Vui lòng chọn giới tính',
+      errorMessage: 'Please select gender',
     },
     ethnicity: {
       invalid: false,
-      errorMessage: 'Vui lòng điền dân tộc',
+      errorMessage: 'Please enter ethnicity',
     },
     nationality: {
       invalid: false,
-      errorMessage: 'Vui lòng điền quốc tịch',
+      errorMessage: 'Please enter nationality',
     },
     religion: {
       invalid: false,
-      errorMessage: 'Vui lòng điền tôn giáo',
+      errorMessage: 'Please enter religion',
     },
     mail_address: {
       invalid: false,
-      errorMessage: 'Địa chỉ email không hợp lệ',
+      errorMessage: 'Invalid email address',
     },
     phone_number: {
       invalid: false,
-      errorMessage: 'Số điện thoại không hợp lệ',
+      errorMessage: 'Invalid phone number',
     },
     citizen_id_number: {
       invalid: false,
-      errorMessage: 'Số căn cước công dân không hợp lệ',
+      errorMessage: 'Invalid citizen ID number',
     },
     marital_status_id: {
       invalid: false,
-      errorMessage: 'Vui lòng chọn tình trạng hôn nhân',
+      errorMessage: 'Please select marital status',
     },
   })
 
   const [addressValidate, setAddressValidate] = useState({
     province_id: {
       invalid: false,
-      errorMessage: 'Vui lòng chọn Tỉnh/Thành phố',
+      errorMessage: 'Please select Province/City',
     },
     district_id: {
       invalid: false,
-      errorMessage: 'Vui lòng chọn Quận/Huyện',
+      errorMessage: 'Please select District',
     },
     ward_id: {
       invalid: false,
-      errorMessage: 'Vui lòng chọn Xã/Phường',
+      errorMessage: 'Please select Ward',
     },
   })
 
@@ -233,7 +233,7 @@ const ApplicantForm = ({
     // if (file && file.size > 10 * 1024 * 1024) {
     //   // 10MB
     //   setImageFileInvalid(true)
-    //   setImageFileErrorMessage('Kích thước tệp không được vượt quá 10MB.')
+    //   setImageFileErrorMessage('File size must not exceed 10MB.')
     // } else {
     //   setImageFileInvalid(false)
     //   setImageFileErrorMessage('')
@@ -246,7 +246,7 @@ const ApplicantForm = ({
     // if (file && file.size > 10 * 1024 * 1024) {
     //   // 10MB
     //   setImageFileInvalid(true)
-    //   setImageFileErrorMessage('Kích thước tệp không được vượt quá 10MB.')
+    //   setImageFileErrorMessage('File size must not exceed 10MB.')
     // } else {
     //   setImageFileInvalid(false)
     //   setImageFileErrorMessage('')
@@ -256,7 +256,7 @@ const ApplicantForm = ({
     {
       type: 'text',
       id: 'inputApplicantFirstName',
-      label: 'Nhập tên*',
+      label: 'Enter first name*',
       name: 'first_name',
       value: applicant.first_name,
       onChange: handleApplicantInputChange,
@@ -266,7 +266,7 @@ const ApplicantForm = ({
     {
       type: 'text',
       id: 'inputApplicantLastName',
-      label: 'Nhập họ và tên đệm*',
+      label: 'Enter last name*',
       name: 'last_name',
       value: applicant.last_name,
       onChange: handleApplicantInputChange,
@@ -276,7 +276,7 @@ const ApplicantForm = ({
     {
       type: 'date',
       id: 'inputApplicantDOB',
-      label: 'Nhập ngày sinh*',
+      label: 'Enter date of birth*',
       name: 'date_of_birth',
       value: applicant.date_of_birth,
       onChange: handleApplicantInputChange,
@@ -286,7 +286,7 @@ const ApplicantForm = ({
     {
       type: 'text',
       id: 'inputApplicantNationality',
-      label: 'Nhập quốc tịch*',
+      label: 'Enter nationality*',
       name: 'nationality',
       value: applicant.nationality,
       onChange: handleApplicantInputChange,
@@ -296,7 +296,7 @@ const ApplicantForm = ({
     {
       type: 'text',
       id: 'inputApplicantEthnicity',
-      label: 'Nhập dân tộc*',
+      label: 'Enter ethnicity*',
       name: 'ethnicity',
       value: applicant.ethnicity,
       onChange: handleApplicantInputChange,
@@ -306,7 +306,7 @@ const ApplicantForm = ({
     {
       type: 'text',
       id: 'inputApplicantReligion',
-      label: 'Nhập tôn giáo*',
+      label: 'Enter religion*',
       name: 'religion',
       value: applicant.religion,
       onChange: handleApplicantInputChange,
@@ -316,39 +316,39 @@ const ApplicantForm = ({
     {
       type: 'select',
       id: 'inputApplicantGender',
-      label: 'Chọn giới tính*',
+      label: 'Select gender*',
       name: 'gender',
       value: applicant.gender,
       onChange: handleApplicantInputChange,
       invalid: formValidate.gender.invalid,
       errorMessage: formValidate.gender.errorMessage,
       options: [
-        { label: 'Nam', value: 1 },
-        { label: 'Nữ', value: 2 },
-        { label: 'Khác', value: 0 },
+        { label: 'Male', value: 1 },
+        { label: 'Female', value: 2 },
+        { label: 'Other', value: 0 },
       ],
     },
     {
       type: 'select',
       id: 'inputApplicantMarital',
-      label: 'Chọn tình trạng hôn nhân*',
+      label: 'Select marital status*',
       name: 'marital_status_id',
       value: applicant.marital_status_id,
       onChange: handleApplicantInputChange,
       invalid: formValidate.marital_status_id.invalid,
       errorMessage: formValidate.marital_status_id.errorMessage,
       options: [
-        { label: 'Chưa kết hôn', value: 1 },
-        { label: 'Sống chung chưa kết hôn', value: 2 },
-        { label: 'Đã có vợ/chồng', value: 3 },
-        { label: 'Góa', value: 4 },
-        { label: 'Ly hôn hoặc ly thân', value: 5 },
+        { label: 'Single', value: 1 },
+        { label: 'Living together without marriage', value: 2 },
+        { label: 'Married', value: 3 },
+        { label: 'Widowed', value: 4 },
+        { label: 'Divorced or separated', value: 5 },
       ],
     },
     {
       type: 'number',
       id: 'inputApplicantPhone',
-      label: 'Nhập số điện thoại*',
+      label: 'Enter phone number*',
       name: 'phone_number',
       value: applicant.phone_number,
       onChange: handleApplicantInputChange,
@@ -358,7 +358,7 @@ const ApplicantForm = ({
     {
       type: 'text',
       id: 'inputApplicantEmail',
-      label: 'Nhập địa chỉ email*',
+      label: 'Enter email address*',
       name: 'mail_address',
       value: applicant.mail_address,
       onChange: handleApplicantInputChange,
@@ -368,12 +368,10 @@ const ApplicantForm = ({
     {
       type: 'select',
       id: 'inputProvinceId',
-      label: 'Chọn Tỉnh/Thành phố*',
+      label: 'Select Province/City*',
       name: 'province_id',
       value: applicant.address.province_id,
       onChange: handleApplicantAddressChange,
-      // invalid: provinceIdInvalid,
-      // errorMessage: provinceIdErrorMessage,
       options: provinces.map((province) => ({
         label: province.province_name,
         value: province.province_id,
@@ -382,12 +380,10 @@ const ApplicantForm = ({
     {
       type: 'select',
       id: 'inputDistrictId',
-      label: 'Chọn Quận/Huyện*',
+      label: 'Select District*',
       name: 'district_id',
       value: applicant.address.district_id,
       onChange: handleApplicantAddressChange,
-      // invalid: districtIdInvalid,
-      // errorMessage: districtIdErrorMessage,
       options: districts.map((district) => ({
         label: district.district_name,
         value: district.district_id,
@@ -396,12 +392,10 @@ const ApplicantForm = ({
     {
       type: 'select',
       id: 'inputWardId',
-      label: 'Chọn Phường/Xã*',
+      label: 'Select Ward*',
       name: 'ward_id',
       value: applicant.address.ward_id,
       onChange: handleApplicantAddressChange,
-      // invalid: wardIdInvalid,
-      // errorMessage: wardIdErrorMessage,
       options: wards.map((ward) => ({
         label: ward.ward_name,
         value: ward.ward_id,
@@ -410,7 +404,7 @@ const ApplicantForm = ({
     {
       type: 'text',
       id: 'inputAddressDetail',
-      label: 'Địa chỉ chi tiết',
+      label: 'Detailed address',
       name: 'address_detail',
       value: applicant.address.address_detail,
       onChange: handleApplicantAddressChange,
@@ -419,7 +413,7 @@ const ApplicantForm = ({
       col: 12,
       type: 'number',
       id: 'inputApplicantCitizen',
-      label: 'Nhập số căn cước công dân*',
+      label: 'Enter citizen ID number*',
       name: 'citizen_id_number',
       value: applicant.citizen_id_number,
       onChange: handleApplicantInputChange,
@@ -427,26 +421,21 @@ const ApplicantForm = ({
       errorMessage: formValidate.citizen_id_number.errorMessage,
     },
     {
-      formLabel: 'Chọn ảnh CCCD mặc trước*',
+      formLabel: 'Select front image of ID card*',
       type: 'file',
       id: 'inputCitizenImg1',
-      label: 'Chọn ảnh CCCD mặc trước*',
-      // key: fileImageKey,
+      label: 'Select front image of ID card*',
       onChange: handleFrontImageChange,
-      // invalid: imageFileInvalid,
-      // errorMessage: imageFileErrorMessage,
     },
     {
-      formLabel: 'Chọn ảnh CCCD mặc sau*',
+      formLabel: 'Select back image of ID card*',
       type: 'file',
       id: 'inputCitizenImg2',
-      label: 'Chọn ảnh CCCD mặc sau*',
-      // key: fileImageKey,
+      label: 'Select back image of ID card*',
       onChange: handleBackImageChange,
-      // invalid: imageFileInvalid,
-      // errorMessage: imageFileErrorMessage,
     },
   ]
+
   return (
     <>
       {inputs.map((input, index) => (

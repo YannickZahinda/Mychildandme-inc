@@ -149,9 +149,9 @@ class Footer extends Component {
                 <div className="col footer-item footer-item4">
                   <h3 className="widget__title">contact</h3>
                   <ul className="contact__info">
-                    <li>660 Broklyn Street, 88 New York</li>
+                    <li>Bukavu IBANDA/Nyawera</li>
                     <li>
-                      <a href="mailto:needhelp@oxpitan.com">needhelp@oxpitan.com</a>
+                      <a href="mailto:needhelp@mychildandme.org">needhelp@mychildandme.org</a>
                     </li>
                     <li>
                       <a href="tel:6668880000">666 888 0000</a>

@@ -1,8 +1,8 @@
 import React from 'react'
 
 // import '../assets/images/slider1.jpg'
-import hiwimg1 from '../assets/images/hiw-img1.jpg'
-import hiwimg2 from '../assets/images/hiw-img4.jpg'
+import hiwimg1 from '../assets/images/hiw-img1.jpeg'
+import hiwimg2 from '../assets/images/mychildandm.jpeg'
 import hiwimg3 from '../assets/images/hiw-img3.jpg'
 
 const HiwArea = () => {

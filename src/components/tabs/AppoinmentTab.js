@@ -64,8 +64,8 @@ const AppointmentTab = ({ accountId }) => {
       setAppointmentModalVisible(false)
       setSuccessModalMessage((prevSuccessModal) => ({
         ...prevSuccessModal,
-        modalTile: 'Thành công!',
-        modalContent: 'Đăng ký lịch hẹn thành công',
+        modalTile: 'Success!',
+        modalContent: 'Appointment registration successful'
       }))
       setSuccessModalVisible(true)
       setPage(1)
@@ -75,8 +75,8 @@ const AppointmentTab = ({ accountId }) => {
       setLoadingModalVisible(false)
       setErrorModalMessage((prevModalError) => ({
         ...prevModalError,
-        modalTile: 'Lỗi',
-        modalContent: 'Đã có lỗi xảy ra, vui lòng thử lại sau',
+        modalTile: 'Error',
+        modalContent: 'An error has occurred, please try again later',
       }))
       setErrorModalVisible(true)
     }
@@ -104,19 +104,20 @@ const AppointmentTab = ({ accountId }) => {
           <div className="col-lg-12">
             <div className=" mt-5">
               <button className="vol-event-btn" onClick={() => setAppointmentModalVisible(true)}>
-                Đăng ký lịch hẹn
+                Schedule Appointment
               </button>
-              <h4 className="event-headline text-bold mt-4 mb-3">Lịch sử đăng ký lịch hẹn</h4>
+              <h4 className="event-headline text-bold mt-4 mb-3">Appointment History</h4>
               <CTable bordered responsive>
                 <CTableHead>
-                  <tr>
-                    <th>STT</th>
-                    <th>Thời gian đăng ký</th>
-                    <th>Thời gian hẹn</th>
-                    <th>Số lượng </th>
-                    <th>Chi tiết</th>
-                    <th>Trạng thái</th>
-                  </tr>
+                <tr>
+                  <th>No.</th>
+                  <th>Registration Time</th>
+                  <th>Deadline</th>
+                  <th>Quantity</th>
+                  <th>Details</th>
+                  <th>Status</th>
+                </tr>
+
                 </CTableHead>
                 <CTableBody>
                   {appointments &&

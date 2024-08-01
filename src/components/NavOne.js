@@ -59,7 +59,7 @@ class NavOne extends Component {
                                         <div className="info-box info-box-1 d-flex align-items-center">
                                             <ul className="d-flex align-items-center">
                                                 <li><a href="#"><i
-                                                    className="fa fa-envelope"></i>needhelp@oxpitan.com</a></li>
+                                                    className="fa fa-envelope"></i>needhelp@omychildandme.org</a></li>
                                                 <li><a href="#"><i className="fa fa-phone-square"></i>666 888 0000</a>
                                                 </li>
                                             </ul>

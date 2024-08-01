@@ -39,10 +39,10 @@ const MixerArea = () => {
                   <img src={sectionicon} alt="section-icon" />
                 </div>
                 <h2 className="section__title text__white">
-                  Nhận nuôi một đứa trẻ, thay đổi một cuộc đời.
+                  Adopt a child, change a life.
                 </h2>
                 <a href="/adoption" className="theme-btn">
-                  Đăng ký nhận nuôi
+                  Register for adoption
                 </a>
               </div>
             </div>
@@ -66,14 +66,14 @@ const MixerArea = () => {
                     </VisibilitySensor> */}
                     {statistics?.adopted_children}
                   </h3>
-                  <p className="fun__text">Số trẻ đã được nhận nuôi</p>
+                  <p className="fun__text">Number of children who have been adopted</p>
                 </div>
               </div>
               <div className="fun-content">
                 <div className="fun-item fun-item2">
                   <i className="icon-heart"></i>
                   <h3 className="counter">{statistics?.in_care_children}</h3>
-                  <p className="fun__text">Trẻ đang đang được bảo trợ</p>
+                  <p className="fun__text">Children currently being sponsored</p>
                 </div>
               </div>
             </div>
@@ -81,11 +81,10 @@ const MixerArea = () => {
               <div className="fun-content-slide">
                 <div className="fun-slide-item">
                   <h3 className="funslide__text">
-                    “Điều khiến đứa trẻ đau khổ không phải là thiếu quần áo, đồ ăn, hay giáo dục mà
-                    là không được thuộc về ai và không có một gia đình”
+                    “What makes a child suffer is not the lack of clothes, food, or education but the lack of belonging and not having a family.”
                   </h3>
                   <p className="funslide__name">
-                    Ông Hermann Gmeiner – Người sáng lập Làng trẻ em SOS Quốc tế
+                    Mr. Hermann Gmeiner – Founder of SOS Children’s Village International
                   </p>
                 </div>
               </div>

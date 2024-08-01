@@ -64,26 +64,26 @@ const DonationTracking = () => {
         <div className="container">
           <div className="form-shared-wrap">
             <div className="text-center">
-              <h1 className="h1__form__title">Kiểm tra thông tin tài trợ của bạn</h1>
+              <h1 className="h1__form__title">Check Your Donation Information</h1>
             </div>
-            <h3 className="h__form__title">Nhập</h3>
+            <h3 className="h__form__title">Enter</h3>
             <CRow className="m-0 pr-0">
               <CCol className="p-0">
                 <CFormInput
                   type="text"
-                  placeholder="Mã tài trợ"
+                  placeholder="Donation Code"
                   value={donationHash}
                   onChange={(e) => setDonationHash(e.target.value)}
                   disabled={donorToken}
                 />
               </CCol>
               <CCol md={1} className="p-0 d-flex align-items-center justify-content-center">
-                Hoặc
+                Or
               </CCol>
               <CCol className="p-0">
                 <CFormInput
                   type="text"
-                  placeholder="Mã nhà tài trợ"
+                  placeholder="Donor Token"
                   value={donorToken}
                   onChange={(e) => setDonorToken(e.target.value)}
                   disabled={donationHash}
@@ -95,22 +95,22 @@ const DonationTracking = () => {
                   disabled={!donationHash && !donorToken}
                   onClick={handleSearchBtnClick}
                 >
-                  Kiểm tra
+                  Check
                 </button>
               </CCol>
             </CRow>
             {donations?.length > 0 && (
               <div className="mt-5">
-                <h3 className="h__form__title mb-1">Danh sách tài trợ</h3>
+                <h3 className="h__form__title mb-1">Donation List</h3>
                 <CTable bordered responsive>
                   <CTableHead>
                     <tr>
                       <th>#</th>
-                      <th>Tên nhà tài trợ</th>
-                      <th>Số tiền</th>
-                      <th>Thời gian</th>
-                      <th>Chiến dịch tài trợ</th>
-                      <th>Gia đình nhận tài trợ</th>
+                      <th>Donor Name</th>
+                      <th>Amount</th>
+                      <th>Time</th>
+                      <th>Donation Campaign</th>
+                      <th>Family Receiving Donation</th>
                       <th></th>
                     </tr>
                   </CTableHead>
@@ -151,7 +151,7 @@ const DonationTracking = () => {
                                     setDonationUsageDetailVisible(true)
                                   }}
                                 >
-                                  <CDropdownItem>Trạng thái sử dụng tài trợ</CDropdownItem>
+                                  <CDropdownItem>Donation Usage Status</CDropdownItem>
                                 </NavLink>
                               </CDropdownMenu>
                             </CDropdown>

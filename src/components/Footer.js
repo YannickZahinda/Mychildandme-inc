@@ -43,8 +43,8 @@ class Footer extends Component {
                     <div className="section-icon">
                       <img src={sectionicon} alt="section-icon" />
                     </div>
-                    <h2 className="section__title text__white">Bản tin</h2>
-                    <p className="section__meta">nhận thông tin cập nhật</p>
+                    <h2 className="section__title text__white">Newsletter</h2>
+                    <p className="section__meta">Receive updates</p>
                   </div>
                   <div className="newsletter-form">
                     <div className="form-shared">
@@ -55,13 +55,13 @@ class Footer extends Component {
                               <input
                                 type="email"
                                 className="form-control"
-                                placeholder="Địa chỉ email"
+                                placeholder="type your email"
                               />
                             </div>
                           </div>
                           <div className="col-lg-3">
                             <button className="theme-btn submit__btn" type="submit">
-                              Gửi
+                              Send
                             </button>
                           </div>
                         </div>
@@ -76,43 +76,43 @@ class Footer extends Component {
             <div className="container">
               <div className="row footer-widget-wrap">
                 <div className="col footer-item footer-item1">
-                  <h3 className="widget__title">Thông tin liên lạc</h3>
+                  <h3 className="widget__title">Contact information</h3>
                   <ul className="foot__links">
                     <li>
-                      <strong>Làng trẻ em SOS Đà Nẵng</strong>
+                      <strong>SOS Children's Village</strong>
                       <p>
-                        Địa chỉ: K142 đường Lê Văn Hiến, Phường Khuê Mỹ, Quận Ngũ Hành Sơn, Đà Nẵng
+                      Address: K142 IBANDA Bukavu/
                       </p>
-                      <p>Tel: 0236.3.836.199</p>
-                      <p>Email: orphanange@gmail.org</p>
+                      <p>Tel: +1(773) 431-1269</p>
+                      <p>Email: mychildandme@gmail.org</p>
                     </li>
                   </ul>
                 </div>
                 <div className="col footer-item footer-item3">
-                  <h3 className="widget__title">Liên kết</h3>
+                  <h3 className="widget__title">Link</h3>
                   <ul className="foot__links">
                     <li>
-                      <a href="#">Tài liệu</a>
+                      <a href="#">Documents</a>
                     </li>
                     <li>
-                      <a href="#">Chính sách bảo mật</a>
+                      <a href="#">Privacy policy</a>
                     </li>
                     <li>
-                      <a href="#">Điều khoản sử dụng</a>
+                      <a href="#">Terms of use</a>
                     </li>
                   </ul>
                 </div>
                 <div className="col footer-item footer-item3">
-                  <h3 className="widget__title">Thông tin minh bạch</h3>
+                  <h3 className="widget__title">Transparency information</h3>
                   <ul className="foot__links">
                     <li>
-                      <a href="#">Báo cáo tài chính</a>
+                      <a href="#">Financial report</a>
                     </li>
                     <li>
-                      <a href="#">Thông tin người đỡ đầu</a>
+                      <a href="#">Sponsor information</a>
                     </li>
                     <li>
-                      <a href="#">Thông tin nhà tài trợ</a>
+                      <a href="#">Donor information</a>
                     </li>
                   </ul>
                 </div>
@@ -152,7 +152,7 @@ class Footer extends Component {
                 <div className="col-lg-12">
                   <div className="copyright-desc">
                     <p>
-                      © Copyright 2023 by <a href="#">orphanage.com</a>
+                      © Copyright 2023 by <a href="#">mychildandme.org</a>
                     </p>
                   </div>
                 </div>

@@ -16,8 +16,7 @@ const VolunteerBiographyModal = ({ isVisible, setVisible, handleSubmit }) => {
           <p>
             <small>
               <i>
-                Vì đây là lần đầu bạn tham gia đăng ký tình nguyện viên, vui lòng điền thông tin
-                dưới đây để hoàn tất đăng ký.
+                Since this is your first time registering as a volunteer, please fill out the information below to complete the registration.
               </i>
             </small>
           </p>
@@ -26,7 +25,7 @@ const VolunteerBiographyModal = ({ isVisible, setVisible, handleSubmit }) => {
       <CModalBody className="">
         <div className="text-dark"></div>
         <div className="mt-3">
-          <div className="text-dark mb-3 event-headline">Tiểu sử cá nhân</div>
+          <div className="text-dark mb-3 event-headline">Personal Biography</div>
           <div className="form-shared">
             <form action="#">
               <div className="form-group w-100">
@@ -50,7 +49,7 @@ const VolunteerBiographyModal = ({ isVisible, setVisible, handleSubmit }) => {
               setVisible(false)
             }}
           >
-            GỬI
+            SEND
           </button>
         </div>
       </CModalBody>

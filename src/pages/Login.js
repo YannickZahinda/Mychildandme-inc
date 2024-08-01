@@ -15,7 +15,7 @@ import { Link, Navigate } from 'react-router-dom'
 import { useState } from 'react'
 import validator from 'validator'
 import { authApi } from 'src/api/services'
-import ReactImg from '../assets/brand/logo3.png'
+import ReactImg from '../assets/brand/mwabana.png'
 import useAuth from 'src/components/hooks/useAuth'
 import ErrorModal from 'src/components/modals/ErrorModal'
 import LoadingModal from 'src/components/modals/LoadingModal'
@@ -45,7 +45,7 @@ const Login = () => {
     setEmail(value)
     if (!validator.isEmail(value)) {
       setEmailInvalid(true)
-      setEmailErrorMessage('Email không hợp lệ!')
+      setEmailErrorMessage('Invalid email!')
     } else {
       setEmailInvalid(false)
       setEmailErrorMessage()
@@ -85,8 +85,8 @@ const Login = () => {
       setLoadingModalVisible(false)
       setErrorModalMessage((prevModalError) => ({
         ...prevModalError,
-        modalTile: 'Lỗi!',
-        modalContent: 'Địa chỉ email hoặc mật khẩu không đúng.',
+        modalTile: 'Error!',
+        modalContent: 'Incorrect email or password.',
       }))
       setErrorModalVisible(true)
     }
@@ -110,14 +110,14 @@ const Login = () => {
             <CCardGroup>
               <CCard className="p-4 mx-2">
                 <CCardBody>
-                  <h1 className="text-center">Đăng nhập</h1>
+                  <h1 className="text-center">Login</h1>
                   <CForm className="mt-3">
                     <div className="mb-4">
                       <CFormInput
                         value={email}
                         id="email"
                         type="email"
-                        placeholder="Địa chỉ email*"
+                        placeholder="Email address*"
                         autoComplete="current-email"
                         onChange={handleEmailChange}
                         invalid={emailInvalid}
@@ -129,7 +129,7 @@ const Login = () => {
                         value={password}
                         id="password"
                         type="password"
-                        placeholder="Mật khẩu*"
+                        placeholder="Password*"
                         onChange={handlePasswordChange}
                         autoComplete="current-password"
                         invalid={passwordInvalid}
@@ -139,12 +139,12 @@ const Login = () => {
                     <CRow className="text-truncate">
                       <CCol md={6} xs={12}>
                         <CButton color="primary" className="px-4" onClick={handleLoginBtnClick}>
-                          Đăng nhập
+                          Login
                         </CButton>
                       </CCol>
                       <CCol md={6} xs={12}>
                         <CButton color="link" className="px-0">
-                          Quên mật khẩu?
+                          Forgot password?
                         </CButton>
                       </CCol>
                     </CRow>
@@ -162,20 +162,19 @@ const Login = () => {
                           src={ReactImg}
                         />
                       </Link>
-                      <h2>Website trại trẻ mồ côi</h2>
+                      <h2>Orphanage Website</h2>
                       <br></br>
                       <p>
-                        Chúng tôi chăm sóc, nuôi dưỡng, hỗ trợ trẻ em mồ côi, trẻ em bị bỏ rơi và
-                        trẻ em có hoàn cảnh khó khăn. nguyenanchi1919@gmail.com
+                        We care for, support, and provide for orphaned, abandoned, and children in difficult situations. 
                       </p>
-                      <p>Qwdsa@23131</p>
+                      <p>needhelp@mychildandmeinc.org</p>
                     </div>
                     <div className="d-flex align-items-center justify-content-center gap-2 mt-3">
-                      <span>Bạn chưa có tài khoản? </span>
+                      <span>Don't have an account? </span>
                       <Link className="text-black" color="black" to="/register">
-                        Đăng ký
+                        Register
                       </Link>
-                      <span>ngay.</span>
+                      <span> now.</span>
                     </div>
                   </div>
                 </CCardBody>

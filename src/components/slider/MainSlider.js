@@ -28,7 +28,7 @@ const MainSlider = () => {
                   <div className="row">
                     <div className="col-md-7">
                       <div className="slider-heading">
-                        <p className="slider__meta">Orphanage</p>
+                        <p className="slider__meta">My Child And Me</p>
                         <h2 className="slider__title">
                           Every child deserves to be loved and cared for.
                         </h2>

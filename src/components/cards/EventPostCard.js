@@ -6,9 +6,10 @@ import moment from 'moment'
 import useAuth from '../hooks/useAuth'
 import SuccessModal from '../modals/SuccessModal'
 import ErrorModal from '../modals/ErrorModal'
-import volunteerService from 'src/api/services/vonlunteerService'
+import volunteerService from '../../api/services/vonlunteerService'
 import VolunteerBiographyModal from '../modals/VolunteerBiographyModal'
 import CreateVolunteerModal from '../modals/CreateVolunteerModal'
+
 const EventPostCard = ({
   eventId,
   title,
@@ -25,13 +26,13 @@ const EventPostCard = ({
   const volunteerApi = volunteerService()
   const [successModalVisible, setSuccessModalVisible] = useState(false)
   const [successModalMessage, setSuccessModalMessage] = useState({
-    modalTile: '',
+    modalTitle: '',
     modalContent: '',
   })
 
-  const [errormodalVisible, setErrorModalVisible] = useState(false)
+  const [errorModalVisible, setErrorModalVisible] = useState(false)
   const [errorModalMessage, setErrorModalMessage] = useState({
-    modalTile: '',
+    modalTitle: '',
     modalContent: '',
   })
 
@@ -50,8 +51,8 @@ const EventPostCard = ({
       await volunteerApi.memberApplyEvent(JSON.stringify(data))
       setSuccessModalMessage((prevSuccessModal) => ({
         ...prevSuccessModal,
-        modalTile: 'Thành công!',
-        modalContent: 'Đăng ký tham gia sự kiện tình nguyện thành công',
+        modalTitle: 'Success!',
+        modalContent: 'Successfully registered for the volunteer event',
       }))
       setChangeCount((prevChangeCount) => setChangeCount(prevChangeCount + 1))
       setSuccessModalVisible(true)
@@ -62,8 +63,8 @@ const EventPostCard = ({
       } else {
         setErrorModalMessage((prevModalError) => ({
           ...prevModalError,
-          modalTile: 'Lỗi',
-          modalContent: 'Đã có lỗi xảy ra, vui lòng thử lại sau',
+          modalTitle: 'Error',
+          modalContent: 'An error occurred, please try again later',
         }))
         setErrorModalVisible(true)
       }
@@ -81,16 +82,16 @@ const EventPostCard = ({
       setCreateVolunteerModalVisible(false)
       setSuccessModalMessage((prevSuccessModal) => ({
         ...prevSuccessModal,
-        modalTile: 'Thành công!',
-        modalContent: 'Đăng ký tham gia sự kiện tình nguyện thành công',
+        modalTitle: 'Success!',
+        modalContent: 'Successfully registered for the volunteer event',
       }))
       setSuccessModalVisible(true)
     } catch (error) {
       console.log(error)
       setErrorModalMessage((prevModalError) => ({
         ...prevModalError,
-        modalTile: 'Lỗi',
-        modalContent: 'Đã có lỗi xảy ra, vui lòng thử lại sau',
+        modalTitle: 'Error',
+        modalContent: 'An error occurred, please try again later',
       }))
       setErrorModalVisible(true)
     }
@@ -103,6 +104,7 @@ const EventPostCard = ({
       setCreateVolunteerModalVisible(true)
     }
   }
+  
   return (
     <>
       <CreateVolunteerModal
@@ -119,12 +121,12 @@ const EventPostCard = ({
         modalMessage={successModalMessage}
         isVisible={successModalVisible}
         setVisible={setSuccessModalVisible}
-      ></SuccessModal>
+      />
       <ErrorModal
         modalMessage={errorModalMessage}
-        isVisible={errormodalVisible}
+        isVisible={errorModalVisible}
         setVisible={setErrorModalVisible}
-      ></ErrorModal>
+      />
       <div className="blog-content">
         <div className="blog-item blog-item1 mb-0">
           <div className="row">
@@ -152,17 +154,17 @@ const EventPostCard = ({
               <div className="vol-event-card-header row justify-content-between m-0">
                 <div className="p-0">
                   <div className="vol-event-time">
-                    Ngày {moment(startTime).format('DD-MM-YYYY hh:mm A')} ~{' '}
+                    Date {moment(startTime).format('DD-MM-YYYY hh:mm A')} ~{' '}
                     {moment(endTime).format('DD-MM-YYYY hh:mm A')}
                   </div>
                 </div>
-                <div className=" p-0">
+                <div className="p-0">
                   <div className="vol-event-time">
                     {isApplied
-                      ? 'Bạn đã đăng ký sự kiện này'
+                      ? 'You have registered for this event'
                       : isAccepting
-                      ? 'Chấp nhận tham gia'
-                      : 'Đã đủ tình nguyện viên'}
+                      ? 'Accepting participation'
+                      : 'Volunteer spots are full'}
                   </div>
                 </div>
               </div>
@@ -170,13 +172,12 @@ const EventPostCard = ({
               <div className="dashed-line"></div>
               <div className="vol-event-label">
                 <span className="vol-event-summary">
-                  <b className="vol-event-summary-b">Tổng quan sự kiện:</b> {summary}
+                  <b className="vol-event-summary-b">Event Overview:</b> {summary}
                 </span>
               </div>
               <div className="vol-event-label">
                 <span className="vol-event-summary">
-                  <b className="vol-event-summary-b">Số lượng tham gia:</b> {maxParticipant} Tình
-                  nguyện viên.
+                  <b className="vol-event-summary-b">Number of participants:</b> {maxParticipant} Volunteers.
                 </span>
               </div>
               <div className="d-flex gap-3 vol-event-btn-group">
@@ -185,10 +186,10 @@ const EventPostCard = ({
                   disabled={isApplied}
                   onClick={handleApplyBtnClick}
                 >
-                  Đăng ký tham gia
+                  Register to participate
                 </button>
                 <NavLink to={'./' + eventId}>
-                  <button className="vol-event-btn">Xem chi tiết</button>
+                  <button className="vol-event-btn">View details</button>
                 </NavLink>
               </div>
             </div>
@@ -198,4 +199,5 @@ const EventPostCard = ({
     </>
   )
 }
+
 export default EventPostCard
