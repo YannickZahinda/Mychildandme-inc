@@ -151,13 +151,13 @@ const Gallery = () => {
                 </div>
               </div>
             </div>
-            <button className="gnext gbtn" tabindex="0">
+            <button className="gnext gbtn" tabIndex="0">
               <FaAngleRight />
             </button>
-            <button className="gprev gbtn" tabindex="1">
+            <button className="gprev gbtn" tabIndex="1">
               <FaAngleLeft />
             </button>
-            <button className="gclose gbtn" tabindex="2" onClick={() => setSlideState(false)}>
+            <button className="gclose gbtn" tabIndex="2" onClick={() => setSlideState(false)}>
               <FaTimes />
             </button>
           </div>
