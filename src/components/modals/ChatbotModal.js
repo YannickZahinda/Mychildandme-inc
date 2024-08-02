@@ -113,7 +113,7 @@ const ChatbotModal = () => {
             </>
           )}
           {loadingState && (
-            <div class="chat-bubble you">
+            <div className="chat-bubble you">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xlinkHref="http://www.w3.org/1999/xlink"
@@ -190,9 +190,9 @@ const ChatbotModal = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="feather feather-send"
                 >
                   <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -211,9 +211,9 @@ const ChatbotModal = () => {
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className="feather feather-message-square animate"
         >
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -225,9 +225,9 @@ const ChatbotModal = () => {
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className="feather feather-x "
         >
           <line x1="18" y1="6" x2="6" y2="18"></line>
